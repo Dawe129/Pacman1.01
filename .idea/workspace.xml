@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Vytvoreni tridy LogikaHry ktera dedi od JPanelu a implementuje ActionListener">
+    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Vytvareni promnenych">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LogikaHry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogikaHry.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,14 +28,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/dpivo/IdeaProjects/Pacman"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dpivo/IdeaProjects/Pacman&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -43,7 +44,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1714684353266</updated>
-      <workItem from="1714684354445" duration="1125000" />
+      <workItem from="1714684354445" duration="1485000" />
+      <workItem from="1715012979539" duration="962000" />
     </task>
     <task id="LOCAL-00001" summary="Vytvoreni tridy LogikaHry ktera dedi od JPanelu a implementuje ActionListener">
       <created>1714685215534</created>
@@ -52,7 +54,14 @@
       <option name="project" value="LOCAL" />
       <updated>1714685215534</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Vytvareni promnenych">
+      <created>1714685774551</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714685774551</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -71,6 +80,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Vytvoreni tridy LogikaHry ktera dedi od JPanelu a implementuje ActionListener" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vytvoreni tridy LogikaHry ktera dedi od JPanelu a implementuje ActionListener" />
+    <MESSAGE value="Vytvareni promnenych" />
+    <option name="LAST_COMMIT_MESSAGE" value="Vytvareni promnenych" />
   </component>
 </project>
