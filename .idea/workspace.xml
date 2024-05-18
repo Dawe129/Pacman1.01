@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Vytvoreni hraci plochy + nastaveni pohybu pacmana">
+      <change afterPath="$PROJECT_DIR$/src/Duch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HraciPole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pacman.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Skore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LogikaHry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogikaHry.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +50,7 @@
       <workItem from="1714684354445" duration="1485000" />
       <workItem from="1715012979539" duration="1431000" />
       <workItem from="1715884969027" duration="1313000" />
+      <workItem from="1716030978295" duration="689000" />
     </task>
     <task id="LOCAL-00001" summary="Vytvoreni tridy LogikaHry ktera dedi od JPanelu a implementuje ActionListener">
       <created>1714685215534</created>
@@ -69,7 +73,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715014173841</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Vytvoreni hraci plochy + nastaveni pohybu pacmana">
+      <created>1716031009356</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716031009356</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
