@@ -1,7 +1,7 @@
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Pacman {
+public class Pacman implements Postava {
     private int x, y;
     private int velikost = 20;
     private int dx, dy;
@@ -16,7 +16,8 @@ public class Pacman {
         this.skore = 0;
     }
 
-    public void Pohyb() {
+    @Override
+    public void Pohyb(int dx, int dy) {
         this.x += dx * rychlost;
         this.y += dy * rychlost;
     }
@@ -30,20 +31,18 @@ public class Pacman {
         this.skore += body;
     }
 
-    public int getSkore() {
-        return this.skore;
-    }
-
-    public void Kresli(Graphics g) {
+    @Override
+    public void Kresleni(Graphics g) {
         g.setColor(Color.YELLOW);
         g.fillArc(x, y, velikost, velikost, 45, 270);
     }
 
-    public boolean Kolize(Duch duch) {
-        return this.x < duch.getX() + duch.getVelikost() &&
-                this.x + velikost > duch.getX() &&
-                this.y < duch.getY() + duch.getVelikost() &&
-                this.y + velikost > duch.getY();
+    @Override
+    public boolean Kolize(Postava postava) {
+        return this.getX() < postava.getX() + postava.getVelikost() &&
+                this.getX() + this.getVelikost() > postava.getX() &&
+                this.getY() < postava.getY() + postava.getVelikost() &&
+                this.getY() + this.getVelikost() > postava.getY();
     }
 
     public int getX() {
@@ -58,11 +57,7 @@ public class Pacman {
         return velikost;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public void setY(int y) {
-        this.y = y;
+    public int getSkore() {
+        return this.skore;
     }
 }
