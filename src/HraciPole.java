@@ -28,7 +28,7 @@ public class HraciPole extends JPanel {
         }
 
         Random random = new Random();
-        int pocetSten = sirka * vyska / 10;
+        int pocetSten = sirka * vyska / 8;
         for (int k = 0; k < pocetSten; k++) {
             int x = random.nextInt(sirka - 2) + 1;
             int y = random.nextInt(vyska - 2) + 1;
@@ -44,7 +44,7 @@ public class HraciPole extends JPanel {
         for (int i = 0; i < vyska; i++) {
             for (int j = 0; j < sirka; j++) {
                 if (pole[i][j] == '#') {
-                    g.setColor(Color.BLUE);
+                    g.setColor(Color.RED);
                     g.fillRect(j * velikostPolicka, i * velikostPolicka, velikostPolicka, velikostPolicka);
                 } else if (pole[i][j] == ' ') {
                     g.setColor(Color.BLACK);
