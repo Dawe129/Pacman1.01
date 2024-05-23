@@ -1,4 +1,4 @@
-import javax.swing.*;
+import javax.swing.JPanel;
 import java.awt.*;
 import java.util.Random;
 
@@ -7,6 +7,8 @@ public class HraciPole extends JPanel {
     private int sirka;
     private int vyska;
     private int velikostPolicka;
+    private Pacman pacman;
+    private Duch duch;
 
     public HraciPole(int sirka, int vyska, int velikostPolicka) {
         this.sirka = sirka;
@@ -38,19 +40,34 @@ public class HraciPole extends JPanel {
         }
     }
 
+    public void setPacman(Pacman pacman) {
+        this.pacman = pacman;
+    }
+
+    public void setDuch(Duch duch) {
+        this.duch = duch;
+    }
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         for (int i = 0; i < vyska; i++) {
             for (int j = 0; j < sirka; j++) {
                 if (pole[i][j] == '#') {
-                    g.setColor(Color.RED);
+                    g.setColor(Color.BLUE);
                     g.fillRect(j * velikostPolicka, i * velikostPolicka, velikostPolicka, velikostPolicka);
-                } else if (pole[i][j] == ' ') {
+                } else {
                     g.setColor(Color.BLACK);
                     g.fillRect(j * velikostPolicka, i * velikostPolicka, velikostPolicka, velikostPolicka);
                 }
             }
+        }
+
+        if (pacman != null) {
+            pacman.Kresleni(g);
+        }
+        if (duch != null) {
+            duch.Kresleni(g);
         }
     }
 
@@ -59,8 +76,8 @@ public class HraciPole extends JPanel {
         repaint();
     }
 
+    @Override
     public Dimension getPreferredSize() {
         return new Dimension(sirka * velikostPolicka, vyska * velikostPolicka);
     }
-
 }
