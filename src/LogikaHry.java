@@ -22,7 +22,6 @@ public class LogikaHry implements ActionListener {
         hraciPole.setFocusable(true);
     }
 
-
     @Override
     public void actionPerformed(ActionEvent e) {
         pacman.Pohyb(pacman.getX(), pacman.getY());

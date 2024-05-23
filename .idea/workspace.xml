@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Pridani rozhrani Postava ktere je iplementovano do tridy Pacman a Duch + pridani metody kolize do tridy Duch">
+    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Pridani tridy LogikaHry ve ktere jsou metody pro zacatecni pozice u pacmana a duchy, ovladani pacmana, ve tride HraciPole je vykresleni pacmana a duchu">
+      <change afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/HraciPole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/HraciPole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HraciPole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HraciPole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LogikaHry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogikaHry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -16,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -59,7 +65,10 @@
       <workItem from="1715884969027" duration="1313000" />
       <workItem from="1716030978295" duration="6624000" />
       <workItem from="1716374827483" duration="1319000" />
-      <workItem from="1716458956108" duration="344000" />
+      <workItem from="1716458956108" duration="959000" />
+      <workItem from="1716460094955" duration="388000" />
+      <workItem from="1716464140492" duration="492000" />
+      <workItem from="1716467574176" duration="4499000" />
     </task>
     <task id="LOCAL-00001" summary="Vytvoreni tridy LogikaHry ktera dedi od JPanelu a implementuje ActionListener">
       <created>1714685215534</created>
@@ -110,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716034727710</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Pridani tridy LogikaHry ve ktere jsou metody pro zacatecni pozice u pacmana a duchy, ovladani pacmana, ve tride HraciPole je vykresleni pacmana a duchu">
+      <created>1716459875290</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716459875290</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,6 +150,7 @@
     <MESSAGE value="Vytvoreni tridy pro Pacmana, ducha, skore, hraci polealogiku hry" />
     <MESSAGE value="Nastaveni vlastnosti pro pacmana a duchy + kostra metod pro pohyb a kresleni" />
     <MESSAGE value="Pridani rozhrani Postava ktere je iplementovano do tridy Pacman a Duch + pridani metody kolize do tridy Duch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pridani rozhrani Postava ktere je iplementovano do tridy Pacman a Duch + pridani metody kolize do tridy Duch" />
+    <MESSAGE value="Pridani tridy LogikaHry ve ktere jsou metody pro zacatecni pozice u pacmana a duchy, ovladani pacmana, ve tride HraciPole je vykresleni pacmana a duchu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pridani tridy LogikaHry ve ktere jsou metody pro zacatecni pozice u pacmana a duchy, ovladani pacmana, ve tride HraciPole je vykresleni pacmana a duchu" />
   </component>
 </project>

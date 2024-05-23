@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Hraci pole");
-            HraciPole hraciPole = new HraciPole(30, 30, 20);
+            HraciPole hraciPole = new HraciPole(40, 20, 20);
             LogikaHry logikaHry = new LogikaHry(hraciPole);
 
             hraciPole.setPacman(logikaHry.getPacman());

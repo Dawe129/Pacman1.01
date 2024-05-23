@@ -1,6 +1,11 @@
 import javax.swing.JPanel;
 import java.awt.*;
-import java.util.Random;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import javax.swing.Timer;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class HraciPole extends JPanel {
     private char[][] pole;
@@ -9,35 +14,46 @@ public class HraciPole extends JPanel {
     private int velikostPolicka;
     private Pacman pacman;
     private Duch duch;
+    private int dynamickaStenaX;
+    private int dynamickaStenaY;
 
     public HraciPole(int sirka, int vyska, int velikostPolicka) {
         this.sirka = sirka;
         this.vyska = vyska;
         this.velikostPolicka = velikostPolicka;
         this.pole = new char[vyska][sirka];
-        inicializujPole();
+        try {
+            inicializujPoleZeSouboru("mapa.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        dynamickaStenaX = 22;
+        dynamickaStenaY = 17;
+        pole[dynamickaStenaY][dynamickaStenaX] = '#';
+
+        Timer timer = new Timer(8000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pole[dynamickaStenaY][dynamickaStenaX] = '.';
+                repaint();
+            }
+        });
+        timer.setRepeats(false);
+        timer.start();
     }
 
-    private void inicializujPole() {
-        for (int i = 0; i < vyska; i++) {
-            for (int j = 0; j < sirka; j++) {
-                if (i == 0 || i == vyska - 1 || j == 0 || j == sirka - 1) {
-                    pole[i][j] = '#';
-                } else {
-                    pole[i][j] = '.';
-                }
+    private void inicializujPoleZeSouboru(String fileName) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader("Mapa.txt"));
+        String line;
+        int rada = 0;
+        while ((line = reader.readLine()) != null && rada < vyska) {
+            for (int sloupec = 0; sloupec < Math.min(line.length(), sirka); sloupec++) {
+                pole[rada][sloupec] = line.charAt(sloupec);
             }
+            rada++;
         }
-
-        Random random = new Random();
-        int pocetSten = sirka * vyska / 8;
-        for (int k = 0; k < pocetSten; k++) {
-            int x = random.nextInt(sirka - 2) + 1;
-            int y = random.nextInt(vyska - 2) + 1;
-            if (pole[y][x] != '#') {
-                pole[y][x] = '#';
-            }
-        }
+        reader.close();
     }
 
     public void setPacman(Pacman pacman) {
