@@ -3,9 +3,6 @@ import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import javax.swing.Timer;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class ObtiznostStredni extends JPanel {
     private char[][] pole;
@@ -14,8 +11,6 @@ public class ObtiznostStredni extends JPanel {
     private int velikostPolicka;
     private Pacman pacman;
     private Duch duch;
-    private int dynamickaStenaX;
-    private int dynamickaStenaY;
 
     public ObtiznostStredni(int sirka, int vyska, int velikostPolicka) {
         this.sirka = sirka;
@@ -23,24 +18,10 @@ public class ObtiznostStredni extends JPanel {
         this.velikostPolicka = velikostPolicka;
         this.pole = new char[vyska][sirka];
         try {
-            inicializujPoleZeSouboru("mapa1.txt");
+            inicializujPoleZeSouboru("Mapa2.txt");
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        dynamickaStenaX = 25;
-        dynamickaStenaY = 12;
-        pole[dynamickaStenaY][dynamickaStenaX] = '#';
-
-        Timer timer = new Timer(8000, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pole[dynamickaStenaY][dynamickaStenaX] = '.';
-                repaint();
-            }
-        });
-        timer.setRepeats(false);
-        timer.start();
     }
 
     public void inicializujPoleZeSouboru(String nazev) throws IOException {
