@@ -22,8 +22,7 @@ public class Menu extends JFrame {
         easyButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                JOptionPane.showMessageDialog(null, "Tato obtížnost není momentálně dostupná.", "Informace", JOptionPane.INFORMATION_MESSAGE);
+                spustitHru("Mapa1.txt");
             }
         });
         panel.add(easyButton);
