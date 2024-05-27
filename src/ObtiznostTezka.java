@@ -3,6 +3,9 @@ import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import javax.swing.Timer;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ObtiznostTezka extends JPanel {
     private char[][] pole;
@@ -11,6 +14,8 @@ public class ObtiznostTezka extends JPanel {
     private int velikostPolicka;
     private Pacman pacman;
     private Duch duch;
+    private int dynamickaStenaX;
+    private int dynamickaStenaY;
 
     public ObtiznostTezka(int sirka, int vyska, int velikostPolicka) {
         this.sirka = sirka;
@@ -22,15 +27,29 @@ public class ObtiznostTezka extends JPanel {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        dynamickaStenaX = 22;
+        dynamickaStenaY = 17;
+        pole[dynamickaStenaY][dynamickaStenaX] = '#';
+
+        Timer timer = new Timer(8000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pole[dynamickaStenaY][dynamickaStenaX] = '.';
+                repaint();
+            }
+        });
+        timer.setRepeats(false);
+        timer.start();
     }
 
     public void inicializujPoleZeSouboru(String nazev) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(nazev));
-        String line;
+        BufferedReader reader = new BufferedReader(new FileReader("Mapa.txt"));
+        String radek;
         int rada = 0;
-        while ((line = reader.readLine()) != null && rada < vyska) {
-            for (int sloupec = 0; sloupec < Math.min(line.length(), sirka); sloupec++) {
-                pole[rada][sloupec] = line.charAt(sloupec);
+        while ((radek = reader.readLine()) != null && rada < vyska) {
+            for (int sloupec = 0; sloupec < Math.min(radek.length(), sirka); sloupec++) {
+                pole[rada][sloupec] = radek.charAt(sloupec);
             }
             rada++;
         }
