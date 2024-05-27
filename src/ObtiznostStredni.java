@@ -7,7 +7,7 @@ import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class HraciPole1 extends JPanel {
+public class ObtiznostStredni extends JPanel {
     private char[][] pole;
     private int sirka;
     private int vyska;
@@ -17,7 +17,7 @@ public class HraciPole1 extends JPanel {
     private int dynamickaStenaX;
     private int dynamickaStenaY;
 
-    public HraciPole1(int sirka, int vyska, int velikostPolicka) {
+    public ObtiznostStredni(int sirka, int vyska, int velikostPolicka) {
         this.sirka = sirka;
         this.vyska = vyska;
         this.velikostPolicka = velikostPolicka;
