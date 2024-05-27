@@ -43,7 +43,7 @@ public class HraciPole extends JPanel {
         timer.start();
     }
 
-    private void inicializujPoleZeSouboru(String fileName) throws IOException {
+    public void inicializujPoleZeSouboru(String nazev) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader("Mapa.txt"));
         String line;
         int rada = 0;

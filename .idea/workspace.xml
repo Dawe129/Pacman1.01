@@ -5,14 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Pridani tridy LogikaHry ve ktere jsou metody pro zacatecni pozice u pacmana a duchy, ovladani pacmana, ve tride HraciPole je vykresleni pacmana a duchu">
-      <change afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HraciPole1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Duch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Duch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/HraciPole$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/HraciPole$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/HraciPole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/HraciPole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry$TAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry$TAdapter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Pacman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Pacman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Postava.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Postava.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Skore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Skore.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HraciPole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HraciPole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LogikaHry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogikaHry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +76,7 @@
       <workItem from="1716460094955" duration="388000" />
       <workItem from="1716464140492" duration="492000" />
       <workItem from="1716467574176" duration="4499000" />
+      <workItem from="1716801479035" duration="634000" />
     </task>
     <task id="LOCAL-00001" summary="Vytvoreni tridy LogikaHry ktera dedi od JPanelu a implementuje ActionListener">
       <created>1714685215534</created>
