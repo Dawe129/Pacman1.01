@@ -20,7 +20,7 @@ public class HraciPole extends JPanel {
         this.velikostPolicka = velikostPolicka;
         this.pole = new char[vyska][sirka];
         try {
-            inicializujPoleZeSouboru("mapa.txt");
+            inicializujPoleZeSouboru("");
         } catch (IOException e) {
             e.printStackTrace();
         }

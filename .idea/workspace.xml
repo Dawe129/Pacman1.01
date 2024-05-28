@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Tridy ObtiznostLehka, ObtiznostStredni a ObtiznostTezka zobrazujou svoje mapy a vykresluji je">
+    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Drobne upravy ve tridach s obtiznosti">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mapa1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Mapa1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/HraciPole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/HraciPole.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Menu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HraciPole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HraciPole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ObtiznostLehka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostLehka.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObtiznostStredni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostStredni.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObtiznostTezka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostTezka.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +44,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/dpivo/IdeaProjects/Pacman",
+    "last_opened_file_path": "C:/Users/Honza/IdeaProjects/Pacman1.01",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -73,7 +70,9 @@
       <workItem from="1716460094955" duration="388000" />
       <workItem from="1716464140492" duration="492000" />
       <workItem from="1716467574176" duration="4499000" />
-      <workItem from="1716801479035" duration="8376000" />
+      <workItem from="1716801479035" duration="8513000" />
+      <workItem from="1716880302024" duration="1230000" />
+      <workItem from="1716882193375" duration="2450000" />
     </task>
     <task id="LOCAL-00001" summary="Vytvoreni tridy LogikaHry ktera dedi od JPanelu a implementuje ActionListener">
       <created>1714685215534</created>
@@ -159,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716811797475</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Drobne upravy ve tridach s obtiznosti">
+      <created>1716814716741</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716814716741</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +194,7 @@
     <MESSAGE value="Pridani tridy HraciPole1 a souboru Mapa1.txt pro mapu pri obtiznost lehka" />
     <MESSAGE value="Pridani trid ObtiznostLehka, ObtiznostStredni a ObtiznostTezka ktere budou mit vzdy svoji mapu kterou po jejich vyvolani zobrazi" />
     <MESSAGE value="Tridy ObtiznostLehka, ObtiznostStredni a ObtiznostTezka zobrazujou svoje mapy a vykresluji je" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tridy ObtiznostLehka, ObtiznostStredni a ObtiznostTezka zobrazujou svoje mapy a vykresluji je" />
+    <MESSAGE value="Drobne upravy ve tridach s obtiznosti" />
+    <option name="LAST_COMMIT_MESSAGE" value="Drobne upravy ve tridach s obtiznosti" />
   </component>
 </project>
