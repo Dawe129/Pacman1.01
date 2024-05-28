@@ -2,13 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public class Menu extends JFrame {
 
     public Menu() {
         setTitle("Pacman Menu");
-        setSize(300, 200);
+        setSize(300, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -22,16 +21,25 @@ public class Menu extends JFrame {
         easyButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                spustitHru("Mapa1.txt");
+                spustitHru(new ObtiznostLehka(25, 21, 20));
             }
         });
         panel.add(easyButton);
+
+        JButton mediumButton = new JButton("Střední");
+        mediumButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                spustitHru(new ObtiznostStredni(30, 20, 20));
+            }
+        });
+        panel.add(mediumButton);
 
         JButton hardButton = new JButton("Těžká");
         hardButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                spustitHru("Mapa.txt");
+                spustitHru(new ObtiznostTezka(40, 20, 20));
             }
         });
         panel.add(hardButton);
@@ -39,24 +47,16 @@ public class Menu extends JFrame {
         add(panel);
     }
 
-    private void spustitHru(String mapaSoubor) {
+    private void spustitHru(JPanel obtiznost) {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Hraci pole");
-            HraciPole hraciPole = new HraciPole(40, 20, 20);
+            HraciPole hraciPole = new HraciPole(40,40,20);
             LogikaHry logikaHry = new LogikaHry(hraciPole);
-
-            try {
-                hraciPole.inicializujPoleZeSouboru(mapaSoubor);
-            } catch (IOException e) {
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Nepodařilo se načíst soubor: " + mapaSoubor, "Chyba", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
 
             hraciPole.setPacman(logikaHry.getPacman());
             hraciPole.setDuch(logikaHry.getDuch());
 
-            frame.add(hraciPole);
+            frame.add(obtiznost);
             frame.pack();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setVisible(true);
