@@ -24,7 +24,7 @@ public class LogikaHry implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        pacman.Pohyb(pacman.getX(), pacman.getY());
+        pacman.Pohyb(pacman.getDx(), pacman.getDy());
         hraciPole.repaint();
     }
 

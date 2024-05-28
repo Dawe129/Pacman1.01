@@ -11,8 +11,6 @@ public class HraciPole extends JPanel {
     private int velikostPolicka;
     private Pacman pacman;
     private Duch duch;
-    private int dynamickaStenaX;
-    private int dynamickaStenaY;
 
     public HraciPole(int sirka, int vyska, int velikostPolicka) {
         this.sirka = sirka;

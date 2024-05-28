@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="upraveni tridy menu pro vice moznosti + vykreslovani vsech map">
+    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="upreaveni mapy pro stredni obtiznost a nastaveni dynamicke steny">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mapa2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Mapa2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostLehka.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostLehka.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObtiznostLehka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostLehka.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObtiznostStredni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostStredni.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/HraciPole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/HraciPole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HraciPole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HraciPole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogikaHry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogikaHry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pacman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pacman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +83,7 @@
       <workItem from="1716801479035" duration="8513000" />
       <workItem from="1716880302024" duration="1230000" />
       <workItem from="1716882193375" duration="3171000" />
-      <workItem from="1716887760676" duration="2509000" />
+      <workItem from="1716887760676" duration="3739000" />
     </task>
     <task id="LOCAL-00001" summary="Vytvoreni tridy LogikaHry ktera dedi od JPanelu a implementuje ActionListener">
       <created>1714685215534</created>
@@ -190,7 +190,21 @@
       <option name="project" value="LOCAL" />
       <updated>1716887848317</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="upreaveni mapy pro stredni obtiznost a nastaveni dynamicke steny">
+      <created>1716890554879</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716890554879</updated>
+    </task>
+    <task id="LOCAL-00017" summary="upreaveni mapy pro stredni obtiznost a nastaveni dynamicke steny">
+      <created>1716890573215</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1716890573215</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +236,7 @@
     <MESSAGE value="Drobne upravy ve tridach s obtiznosti" />
     <MESSAGE value="Predelani mapy pro lehkou obtiznost + male upravy ve tride ObtiznostLehka" />
     <MESSAGE value="upraveni tridy menu pro vice moznosti + vykreslovani vsech map" />
-    <option name="LAST_COMMIT_MESSAGE" value="upraveni tridy menu pro vice moznosti + vykreslovani vsech map" />
+    <MESSAGE value="upreaveni mapy pro stredni obtiznost a nastaveni dynamicke steny" />
+    <option name="LAST_COMMIT_MESSAGE" value="upreaveni mapy pro stredni obtiznost a nastaveni dynamicke steny" />
   </component>
 </project>

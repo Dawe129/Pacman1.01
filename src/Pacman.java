@@ -31,6 +31,14 @@ public class Pacman implements Postava {
         this.skore += body;
     }
 
+    public int getDx() {
+        return dx;
+    }
+
+    public int getDy() {
+        return dy;
+    }
+
     @Override
     public void Kresleni(Graphics g) {
         g.setColor(Color.YELLOW);
@@ -39,25 +47,24 @@ public class Pacman implements Postava {
 
     @Override
     public boolean Kolize(Postava postava) {
-        return this.getX() < postava.getX() + postava.getVelikost() &&
-                this.getX() + this.getVelikost() > postava.getX() &&
-                this.getY() < postava.getY() + postava.getVelikost() &&
-                this.getY() + this.getVelikost() > postava.getY();
+        return x < postava.getX() + postava.getVelikost() &&
+                x + velikost > postava.getX() &&
+                y < postava.getY() + postava.getVelikost() &&
+                y + velikost > postava.getY();
     }
 
+    @Override
     public int getX() {
         return x;
     }
 
+    @Override
     public int getY() {
         return y;
     }
 
+    @Override
     public int getVelikost() {
         return velikost;
-    }
-
-    public int getSkore() {
-        return this.skore;
     }
 }
