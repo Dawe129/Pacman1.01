@@ -31,7 +31,7 @@ public class ObtiznostLehka extends JPanel {
         dynamickaStenaY = 2;
         pole[dynamickaStenaY][dynamickaStenaX] = '#';
 
-        Timer timer = new Timer(5000, new ActionListener() {
+        Timer timer = new Timer(6000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pole[dynamickaStenaY][dynamickaStenaX] = '.';
