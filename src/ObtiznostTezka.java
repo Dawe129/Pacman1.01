@@ -1,13 +1,12 @@
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import javax.swing.Timer;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class ObtiznostTezka extends JPanel {
+public class ObtiznostTezka extends JPanel implements KeyListener {
     private char[][] pole;
     private int sirka;
     private int vyska;
@@ -32,15 +31,18 @@ public class ObtiznostTezka extends JPanel {
         dynamickaStenaY = 17;
         pole[dynamickaStenaY][dynamickaStenaX] = '#';
 
-        Timer timer = new Timer(8000, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pole[dynamickaStenaY][dynamickaStenaX] = '.';
-                repaint();
-            }
+        Timer timer = new Timer(7000, e -> {
+            pole[dynamickaStenaY][dynamickaStenaX] = '.';
+            repaint();
         });
         timer.setRepeats(false);
         timer.start();
+
+        this.addKeyListener(this);
+        setFocusable(true);
+        setFocusTraversalKeysEnabled(false);
+
+        pacman = new Pacman(6, 7, velikostPolicka, 20);
     }
 
     public void inicializujPoleZeSouboru(String nazev) throws IOException {
@@ -54,14 +56,6 @@ public class ObtiznostTezka extends JPanel {
             rada++;
         }
         reader.close();
-    }
-
-    public void setPacman(Pacman pacman) {
-        this.pacman = pacman;
-    }
-
-    public void setDuch(Duch duch) {
-        this.duch = duch;
     }
 
     @Override
@@ -82,9 +76,6 @@ public class ObtiznostTezka extends JPanel {
         if (pacman != null) {
             pacman.Kresleni(g);
         }
-        if (duch != null) {
-            duch.Kresleni(g);
-        }
     }
 
     public void aktualizujPole(char[][] novePole) {
@@ -95,5 +86,18 @@ public class ObtiznostTezka extends JPanel {
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(sirka * velikostPolicka, vyska * velikostPolicka);
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        pacman.keyPressed(e);
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
     }
 }

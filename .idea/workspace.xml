@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Drobne upravy ve tridach HraciPole, LogikaHry a Pacman">
+    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Upravy pro pohyb pacmana">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Pacman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Pacman.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HraciPole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HraciPole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LogikaHry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogikaHry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/HraciPole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/HraciPole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry$TAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry$TAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostLehka$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostLehka.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostLehka.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ObtiznostLehka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostLehka.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pacman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pacman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ObtiznostStredni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostStredni.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +86,7 @@
       <workItem from="1716880302024" duration="1230000" />
       <workItem from="1716882193375" duration="3171000" />
       <workItem from="1716887760676" duration="3974000" />
-      <workItem from="1716968134723" duration="4972000" />
+      <workItem from="1716968134723" duration="6350000" />
     </task>
     <task id="LOCAL-00001" summary="Vytvoreni tridy LogikaHry ktera dedi od JPanelu a implementuje ActionListener">
       <created>1714685215534</created>
@@ -214,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716891763127</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Upravy pro pohyb pacmana">
+      <created>1716974645146</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1716974645146</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +255,7 @@
     <MESSAGE value="upraveni tridy menu pro vice moznosti + vykreslovani vsech map" />
     <MESSAGE value="upreaveni mapy pro stredni obtiznost a nastaveni dynamicke steny" />
     <MESSAGE value="Drobne upravy ve tridach HraciPole, LogikaHry a Pacman" />
-    <option name="LAST_COMMIT_MESSAGE" value="Drobne upravy ve tridach HraciPole, LogikaHry a Pacman" />
+    <MESSAGE value="Upravy pro pohyb pacmana" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upravy pro pohyb pacmana" />
   </component>
 </project>
