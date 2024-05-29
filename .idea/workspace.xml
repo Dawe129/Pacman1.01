@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="upreaveni mapy pro stredni obtiznost a nastaveni dynamicke steny">
+    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Drobne upravy ve tridach HraciPole, LogikaHry a Pacman">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/HraciPole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/HraciPole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Pacman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Pacman.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HraciPole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HraciPole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LogikaHry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogikaHry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ObtiznostLehka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostLehka.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pacman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pacman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,11 +29,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -83,7 +85,8 @@
       <workItem from="1716801479035" duration="8513000" />
       <workItem from="1716880302024" duration="1230000" />
       <workItem from="1716882193375" duration="3171000" />
-      <workItem from="1716887760676" duration="3739000" />
+      <workItem from="1716887760676" duration="3974000" />
+      <workItem from="1716968134723" duration="4972000" />
     </task>
     <task id="LOCAL-00001" summary="Vytvoreni tridy LogikaHry ktera dedi od JPanelu a implementuje ActionListener">
       <created>1714685215534</created>
@@ -204,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716890573215</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Drobne upravy ve tridach HraciPole, LogikaHry a Pacman">
+      <created>1716891763127</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1716891763127</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +247,7 @@
     <MESSAGE value="Predelani mapy pro lehkou obtiznost + male upravy ve tride ObtiznostLehka" />
     <MESSAGE value="upraveni tridy menu pro vice moznosti + vykreslovani vsech map" />
     <MESSAGE value="upreaveni mapy pro stredni obtiznost a nastaveni dynamicke steny" />
-    <option name="LAST_COMMIT_MESSAGE" value="upreaveni mapy pro stredni obtiznost a nastaveni dynamicke steny" />
+    <MESSAGE value="Drobne upravy ve tridach HraciPole, LogikaHry a Pacman" />
+    <option name="LAST_COMMIT_MESSAGE" value="Drobne upravy ve tridach HraciPole, LogikaHry a Pacman" />
   </component>
 </project>

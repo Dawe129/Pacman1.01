@@ -22,7 +22,10 @@ public class HraciPole extends JPanel {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        Pacman pacman = new Pacman(1, 1, velikostPolicka, 1);
+        setPacman(pacman);
     }
+
 
     public void inicializujPoleZeSouboru(String nazev) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(nazev));
@@ -66,6 +69,10 @@ public class HraciPole extends JPanel {
         if (duch != null) {
             duch.Kresleni(g);
         }
+    }
+
+    public char[][] getPole() {
+        return pole;
     }
 
     public void aktualizujPole(char[][] novePole) {

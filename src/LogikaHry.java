@@ -12,7 +12,7 @@ public class LogikaHry implements ActionListener {
 
     public LogikaHry(HraciPole hraciPole) {
         this.hraciPole = hraciPole;
-        this.pacman = new Pacman(1, 1);
+        this.pacman = new Pacman(2, 3, 1,1);
         this.duch = new Duch(10, 10);
 
         this.timer = new Timer(100, this);
@@ -24,9 +24,10 @@ public class LogikaHry implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        pacman.Pohyb(pacman.getDx(), pacman.getDy());
+        pacman.pohyb(hraciPole.getPole()); // Předáváme aktuální herní pole do metody pohyb()
         hraciPole.repaint();
     }
+
 
     private class TAdapter extends KeyAdapter {
         @Override

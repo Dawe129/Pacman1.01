@@ -1,25 +1,22 @@
-import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Color;
+import java.awt.event.KeyEvent;
 
 public class Pacman implements Postava {
     private int x, y;
-    private int velikost = 20;
     private int dx, dy;
+    private int velikostPolicka;
     private int rychlost = 5;
     private int skore;
+    private int velikost;
 
-    public Pacman(int startX, int startY) {
-        this.x = startX;
-        this.y = startY;
+    public Pacman(int x, int y, int velikostPolicka, int velikost) {
+        this.x = x;
+        this.y = y;
+        this.velikostPolicka = velikostPolicka;
+        this.velikost = velikost;
         this.dx = 0;
         this.dy = 0;
-        this.skore = 0;
-    }
-
-    @Override
-    public void Pohyb(int dx, int dy) {
-        this.x += dx * rychlost;
-        this.y += dy * rychlost;
     }
 
     public void nastavSmer(int dx, int dy) {
@@ -31,6 +28,35 @@ public class Pacman implements Postava {
         this.skore += body;
     }
 
+    public void pohyb(char[][] pole) {
+        x += dx * rychlost;
+        y += dy * rychlost;
+
+    }
+
+    public void kresleni(Graphics g) {
+        g.setColor(Color.YELLOW);
+        g.fillArc(x * velikostPolicka, y * velikostPolicka, velikost, velikost, 0, 360);
+    }
+
+    public void keyPressed(KeyEvent e) {
+        int keyCode = e.getKeyCode();
+        switch (keyCode) {
+            case KeyEvent.VK_UP:
+                nastavSmer(0, -1);
+                break;
+            case KeyEvent.VK_DOWN:
+                nastavSmer(0, 1);
+                break;
+            case KeyEvent.VK_LEFT:
+                nastavSmer(-1, 0);
+                break;
+            case KeyEvent.VK_RIGHT:
+                nastavSmer(1, 0);
+                break;
+        }
+    }
+
     public int getDx() {
         return dx;
     }
@@ -40,9 +66,15 @@ public class Pacman implements Postava {
     }
 
     @Override
+    public void Pohyb(int dx, int dy) {
+        this.dx = dx;
+        this.dy = dy;
+    }
+
+    @Override
     public void Kresleni(Graphics g) {
         g.setColor(Color.YELLOW);
-        g.fillArc(x, y, velikost, velikost, 45, 270);
+        g.fillArc(x * velikostPolicka, y * velikostPolicka, velikost, velikost, 0, 360);
     }
 
     @Override

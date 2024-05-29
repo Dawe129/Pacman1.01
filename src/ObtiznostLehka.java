@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -31,12 +29,9 @@ public class ObtiznostLehka extends JPanel {
         dynamickaStenaY = 2;
         pole[dynamickaStenaY][dynamickaStenaX] = '#';
 
-        Timer timer = new Timer(6000, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pole[dynamickaStenaY][dynamickaStenaX] = '.';
-                repaint();
-            }
+        Timer timer = new Timer(6000, e -> {
+            pole[dynamickaStenaY][dynamickaStenaX] = '.';
+            repaint();
         });
         timer.setRepeats(false);
         timer.start();
@@ -55,13 +50,7 @@ public class ObtiznostLehka extends JPanel {
         reader.close();
     }
 
-    public void setPacman(Pacman pacman) {
-        this.pacman = pacman;
-    }
 
-    public void setDuch(Duch duch) {
-        this.duch = duch;
-    }
 
     @Override
     protected void paintComponent(Graphics g) {
