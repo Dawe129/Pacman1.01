@@ -1,5 +1,5 @@
-import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 
 public class Pacman implements Postava {
@@ -9,6 +9,8 @@ public class Pacman implements Postava {
     private int rychlost = 5;
     private int skore;
     private int velikost;
+    private int smer;
+    private int usta;
 
     public Pacman(int x, int y, int velikostPolicka, int velikost) {
         this.x = x;
@@ -17,6 +19,8 @@ public class Pacman implements Postava {
         this.velikost = velikost;
         this.dx = 0;
         this.dy = 0;
+        this.smer = 0;
+        this.usta = 0;
     }
 
     public void nastavSmer(int dx, int dy) {
@@ -29,14 +33,32 @@ public class Pacman implements Postava {
     }
 
     public void pohyb(char[][] pole) {
-        x += dx * rychlost;
-        y += dy * rychlost;
+        int novaX = x + dx * rychlost;
+        int novaY = y + dy * rychlost;
 
+        if (novaX >= 0 && novaX < pole[0].length && novaY >= 0 && novaY < pole.length && pole[novaY][novaX] != '#') {
+            x = novaX;
+            y = novaY;
+        }
+
+        // Určení směru a otevření úst Pacmana
+        if (dx > 0) {
+            smer = 0;
+        } else if (dx < 0) {
+            smer = 2;
+        } else if (dy > 0) {
+            smer = 1;
+        } else if (dy < 0) {
+            smer = 3;
+        }
+
+        // Nastavení úhlu otevření úst
+        usta = (usta + 1) % 2;
     }
 
     public void kresleni(Graphics g) {
         g.setColor(Color.YELLOW);
-        g.fillArc(x * velikostPolicka, y * velikostPolicka, velikost, velikost, 0, 360);
+        g.fillArc(x * velikostPolicka, y * velikostPolicka, velikost, velikost, smer * 45 + usta * 30, 300 - usta * 60);
     }
 
     public void keyPressed(KeyEvent e) {
@@ -74,7 +96,7 @@ public class Pacman implements Postava {
     @Override
     public void Kresleni(Graphics g) {
         g.setColor(Color.YELLOW);
-        g.fillArc(x * velikostPolicka, y * velikostPolicka, velikost, velikost, 0, 360);
+        g.fillArc(x * velikostPolicka, y * velikostPolicka, velikost, velikost, smer * 45 + usta * 30, 300 - usta * 60);
     }
 
     @Override

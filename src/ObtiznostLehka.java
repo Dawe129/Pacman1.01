@@ -1,10 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class ObtiznostLehka extends JPanel {
+public class ObtiznostLehka extends JPanel implements KeyListener {
     private char[][] pole;
     private int sirka;
     private int vyska;
@@ -35,6 +37,12 @@ public class ObtiznostLehka extends JPanel {
         });
         timer.setRepeats(false);
         timer.start();
+
+        this.addKeyListener(this);
+        setFocusable(true);
+        setFocusTraversalKeysEnabled(false);
+
+        pacman = new Pacman(1, 13, velikostPolicka, 20);
     }
 
     public void inicializujPoleZeSouboru(String nazev) throws IOException {
@@ -49,8 +57,6 @@ public class ObtiznostLehka extends JPanel {
         }
         reader.close();
     }
-
-
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -70,9 +76,6 @@ public class ObtiznostLehka extends JPanel {
         if (pacman != null) {
             pacman.Kresleni(g);
         }
-        if (duch != null) {
-            duch.Kresleni(g);
-        }
     }
 
     public void aktualizujPole(char[][] novePole) {
@@ -83,5 +86,18 @@ public class ObtiznostLehka extends JPanel {
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(sirka * velikostPolicka, vyska * velikostPolicka);
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        pacman.keyPressed(e);
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
     }
 }

@@ -12,7 +12,7 @@ public class Menu extends JFrame {
         setLocationRelativeTo(null);
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(3, 1));
+        panel.setLayout(new GridLayout(5, 1));
 
         JLabel label = new JLabel("Vyberte obtížnost:", SwingConstants.CENTER);
         panel.add(label);
@@ -44,13 +44,22 @@ public class Menu extends JFrame {
         });
         panel.add(hardButton);
 
+        JButton exitButton = new JButton("Konec");
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ukoncitProgram();
+            }
+        });
+        panel.add(exitButton);
+
         add(panel);
     }
 
     private void spustitHru(JPanel obtiznost) {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Hraci pole");
-            HraciPole hraciPole = new HraciPole(40,40,20);
+            HraciPole hraciPole = new HraciPole(40, 40, 20);
             LogikaHry logikaHry = new LogikaHry(hraciPole);
 
             hraciPole.setPacman(logikaHry.getPacman());
@@ -62,5 +71,9 @@ public class Menu extends JFrame {
             frame.setVisible(true);
         });
         dispose();
+    }
+
+    private void ukoncitProgram() {
+        System.exit(0);
     }
 }

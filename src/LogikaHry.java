@@ -24,7 +24,7 @@ public class LogikaHry implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        pacman.pohyb(hraciPole.getPole()); // Předáváme aktuální herní pole do metody pohyb()
+        pacman.pohyb(hraciPole.getPole());
         hraciPole.repaint();
     }
 
