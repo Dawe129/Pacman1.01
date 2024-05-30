@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Opraveni pohybu ve tridach ObtiznostStredni a ObtiznostTezka">
+    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="nastaveni skore + vykresleni skore ve tride ObtiznostLehka">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObtiznostLehka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostLehka.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostStredni.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostStredni.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostTezka.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostTezka.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Skore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Skore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ObtiznostStredni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostStredni.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ObtiznostTezka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostTezka.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Skore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Skore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +87,7 @@
       <workItem from="1716882193375" duration="3171000" />
       <workItem from="1716887760676" duration="3974000" />
       <workItem from="1716968134723" duration="7829000" />
-      <workItem from="1717059992839" duration="3977000" />
+      <workItem from="1717059992839" duration="5271000" />
     </task>
     <task id="LOCAL-00001" summary="Vytvoreni tridy LogikaHry ktera dedi od JPanelu a implementuje ActionListener">
       <created>1714685215534</created>
@@ -246,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717062968390</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="nastaveni skore + vykresleni skore ve tride ObtiznostLehka">
+      <created>1717067034366</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1717067034366</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +296,7 @@
     <MESSAGE value="Vypsani Pacmana ve vsech obtiznosti" />
     <MESSAGE value="Oprava metody pro pohyb Pacmana + chozeni pacmana ve trid ObtiznostLehka" />
     <MESSAGE value="Opraveni pohybu ve tridach ObtiznostStredni a ObtiznostTezka" />
-    <option name="LAST_COMMIT_MESSAGE" value="Opraveni pohybu ve tridach ObtiznostStredni a ObtiznostTezka" />
+    <MESSAGE value="nastaveni skore + vykresleni skore ve tride ObtiznostLehka" />
+    <option name="LAST_COMMIT_MESSAGE" value="nastaveni skore + vykresleni skore ve tride ObtiznostLehka" />
   </component>
 </project>

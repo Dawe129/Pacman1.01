@@ -14,7 +14,7 @@ public class Skore {
 
     public void Kresleni(Graphics g) {
         g.setColor(Color.WHITE);
-        g.fillOval(x * velikost + velikost / 4, y * velikost + velikost / 4, velikost / 2, velikost / 2);
+        g.fillOval(x * velikost + velikost / 4, y * velikost + velikost / 4, velikost / 4, velikost / 4);
     }
 
     public int getX() {
