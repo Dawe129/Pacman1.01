@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -67,6 +68,10 @@ public class ObtiznostStredni extends JPanel implements KeyListener {
                 }
             }
             repaint();
+
+            if (skore.isEmpty()) {
+                zobrazKonecHry();
+            }
         });
         pohybTimer.start();
     }
@@ -129,5 +134,34 @@ public class ObtiznostStredni extends JPanel implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
+    }
+
+    private void zobrazKonecHry() {
+        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        Object[] options = {"Hrát znovu", "Menu", "Konec"};
+        int choice = JOptionPane.showOptionDialog(frame, "Gratulace! Sežral jsi všechny koule. Co chceš udělat?", "Konec hry", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[2]);
+        switch (choice) {
+            case JOptionPane.YES_OPTION:
+                frame.getContentPane().removeAll();
+                ObtiznostStredni novaHra = new ObtiznostStredni(sirka, vyska, velikostPolicka);
+                frame.getContentPane().add(novaHra);
+                frame.getContentPane().revalidate();
+                frame.getContentPane().repaint();
+                novaHra.requestFocusInWindow();
+                frame.pack();
+                break;
+
+            case JOptionPane.NO_OPTION:
+                frame.getContentPane().removeAll();
+                Menu menu = new Menu();
+                menu.setVisible(true);
+                frame.pack();
+                break;
+
+            case JOptionPane.CANCEL_OPTION:
+                frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
+                break;
+        }
+        ((JDialog) SwingUtilities.getWindowAncestor(frame)).dispose();
     }
 }
