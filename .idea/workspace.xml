@@ -4,27 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Oprava metody pro pohyb Pacmana + chozeni pacmana ve trid ObtiznostLehka">
+    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Opraveni pohybu ve tridach ObtiznostStredni a ObtiznostTezka">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Duch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Duch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/HraciPole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/HraciPole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry$TAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry$TAdapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostLehka.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostLehka.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostStredni.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostStredni.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostTezka.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostTezka.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Pacman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Pacman.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Postava.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Postava.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Skore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Skore.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ObtiznostLehka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostLehka.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObtiznostStredni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostStredni.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObtiznostTezka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostTezka.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pacman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pacman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Skore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Skore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +83,7 @@
       <workItem from="1716882193375" duration="3171000" />
       <workItem from="1716887760676" duration="3974000" />
       <workItem from="1716968134723" duration="7829000" />
-      <workItem from="1717059992839" duration="2859000" />
+      <workItem from="1717059992839" duration="3977000" />
     </task>
     <task id="LOCAL-00001" summary="Vytvoreni tridy LogikaHry ktera dedi od JPanelu a implementuje ActionListener">
       <created>1714685215534</created>
@@ -256,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717061479258</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Opraveni pohybu ve tridach ObtiznostStredni a ObtiznostTezka">
+      <created>1717062968390</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1717062968390</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,6 +284,7 @@
     <MESSAGE value="Upravy Ohledne Pacmana a Menu" />
     <MESSAGE value="Vypsani Pacmana ve vsech obtiznosti" />
     <MESSAGE value="Oprava metody pro pohyb Pacmana + chozeni pacmana ve trid ObtiznostLehka" />
-    <option name="LAST_COMMIT_MESSAGE" value="Oprava metody pro pohyb Pacmana + chozeni pacmana ve trid ObtiznostLehka" />
+    <MESSAGE value="Opraveni pohybu ve tridach ObtiznostStredni a ObtiznostTezka" />
+    <option name="LAST_COMMIT_MESSAGE" value="Opraveni pohybu ve tridach ObtiznostStredni a ObtiznostTezka" />
   </component>
 </project>

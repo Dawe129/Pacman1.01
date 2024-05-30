@@ -5,6 +5,8 @@ import java.awt.event.KeyListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ObtiznostLehka extends JPanel implements KeyListener {
     private char[][] pole;
@@ -12,15 +14,16 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
     private int vyska;
     private int velikostPolicka;
     private Pacman pacman;
-    private Duch duch;
-    private int dynamickaStenaX;
     private int dynamickaStenaY;
+    private int dynamickaStenaX;
+    private List<Skore> skore;
 
     public ObtiznostLehka(int sirka, int vyska, int velikostPolicka) {
         this.sirka = sirka;
         this.vyska = vyska;
         this.velikostPolicka = velikostPolicka;
         this.pole = new char[vyska][sirka];
+        this.skore = new ArrayList<>();
         try {
             inicializujPoleZeSouboru("Mapa1.txt");
         } catch (IOException e) {
@@ -31,12 +34,12 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
         dynamickaStenaY = 2;
         pole[dynamickaStenaY][dynamickaStenaX] = '#';
 
-        Timer stenaTimer = new Timer(6000, e -> {
+        Timer timer = new Timer(6000, e -> {
             pole[dynamickaStenaY][dynamickaStenaX] = '.';
             repaint();
         });
-        stenaTimer.setRepeats(false);
-        stenaTimer.start();
+        timer.setRepeats(false);
+        timer.start();
 
         this.addKeyListener(this);
         setFocusable(true);
@@ -44,8 +47,24 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
 
         pacman = new Pacman(1, 13, velikostPolicka, 20);
 
+        for (int i = 0; i < vyska; i++) {
+            for (int j = 0; j < sirka; j++) {
+                if (pole[i][j] == '.') {
+                    skore.add(new Skore(j, i, velikostPolicka, 10));
+                }
+            }
+        }
+
         Timer pohybTimer = new Timer(100, e -> {
             pacman.pohyb(pole);
+            for (int k = 0; k < skore.size(); k++) {
+                Skore bod = skore.get(k);
+                if (pacman.getX() == bod.getX() && pacman.getY() == bod.getY()) {
+                    pacman.pridejSkore(bod.getHodnota());
+                    skore.remove(bod);
+                    k--;
+                }
+            }
             repaint();
         });
         pohybTimer.start();
@@ -81,6 +100,10 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
 
         if (pacman != null) {
             pacman.Kresleni(g);
+        }
+
+        for (Skore bod : skore) {
+            bod.Kresleni(g);
         }
     }
 
