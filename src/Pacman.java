@@ -33,8 +33,8 @@ public class Pacman implements Postava {
     }
 
     public void pohyb(char[][] pole) {
-        int novaX = x + dx * rychlost;
-        int novaY = y + dy * rychlost;
+        int novaX = x + dx;
+        int novaY = y + dy;
 
         if (novaX >= 0 && novaX < pole[0].length && novaY >= 0 && novaY < pole.length && pole[novaY][novaX] != '#') {
             x = novaX;
@@ -42,13 +42,13 @@ public class Pacman implements Postava {
         }
 
         if (dx > 0) {
-            smer = 0;
+            smer = 0; // vpravo
         } else if (dx < 0) {
-            smer = 2;
+            smer = 2; // vlevo
         } else if (dy > 0) {
-            smer = 1;
+            smer = 1; // dolů
         } else if (dy < 0) {
-            smer = 3;
+            smer = 3; // nahoru
         }
 
         usta = (usta + 1) % 2;
@@ -89,7 +89,26 @@ public class Pacman implements Postava {
     @Override
     public void Kresleni(Graphics g) {
         g.setColor(Color.YELLOW);
-        g.fillArc(x * velikostPolicka, y * velikostPolicka, velikost, velikost, smer * 45 + usta * 30, 300 - usta * 60);
+        int startAngle;
+        int arcAngle = 330 - usta * 45;
+        switch (smer) {
+            case 0:
+                startAngle = 45 - usta * 0;
+                break;
+            case 1:
+                startAngle = 315 - usta * 0;
+                break;
+            case 2:
+                startAngle = 225 - usta * 0;
+                break;
+            case 3:
+                startAngle = 135 - usta * 0;
+                break;
+            default:
+                startAngle = 45;
+                break;
+        }
+        g.fillArc(x * velikostPolicka, y * velikostPolicka, velikost, velikost, startAngle, arcAngle);
     }
 
     @Override

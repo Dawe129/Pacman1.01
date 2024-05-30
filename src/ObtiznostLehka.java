@@ -52,7 +52,7 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
     }
 
     public void inicializujPoleZeSouboru(String nazev) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(nazev));
+        BufferedReader reader = new BufferedReader(new FileReader("Mapa1.txt"));
         String radek;
         int rada = 0;
         while ((radek = reader.readLine()) != null && rada < vyska) {

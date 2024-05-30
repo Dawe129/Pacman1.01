@@ -43,6 +43,12 @@ public class ObtiznostStredni extends JPanel implements KeyListener {
         setFocusTraversalKeysEnabled(false);
 
         pacman = new Pacman(26, 7, velikostPolicka, 20);
+
+        Timer pohybTimer = new Timer(100, e -> {
+            pacman.pohyb(pole);
+            repaint();
+        });
+        pohybTimer.start();
     }
 
     public void inicializujPoleZeSouboru(String nazev) throws IOException {
