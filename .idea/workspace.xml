@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Vypsani Pacmana ve vsech obtiznosti">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pacman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pacman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +84,7 @@
       <workItem from="1716882193375" duration="3171000" />
       <workItem from="1716887760676" duration="3974000" />
       <workItem from="1716968134723" duration="7829000" />
+      <workItem from="1717059992839" duration="1071000" />
     </task>
     <task id="LOCAL-00001" summary="Vytvoreni tridy LogikaHry ktera dedi od JPanelu a implementuje ActionListener">
       <created>1714685215534</created>

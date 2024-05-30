@@ -6,7 +6,7 @@ public class Pacman implements Postava {
     private int x, y;
     private int dx, dy;
     private int velikostPolicka;
-    private int rychlost = 5;
+    private int rychlost = 1;
     private int skore;
     private int velikost;
     private int smer;
@@ -41,7 +41,6 @@ public class Pacman implements Postava {
             y = novaY;
         }
 
-        // Určení směru a otevření úst Pacmana
         if (dx > 0) {
             smer = 0;
         } else if (dx < 0) {
@@ -52,13 +51,7 @@ public class Pacman implements Postava {
             smer = 3;
         }
 
-        // Nastavení úhlu otevření úst
         usta = (usta + 1) % 2;
-    }
-
-    public void kresleni(Graphics g) {
-        g.setColor(Color.YELLOW);
-        g.fillArc(x * velikostPolicka, y * velikostPolicka, velikost, velikost, smer * 45 + usta * 30, 300 - usta * 60);
     }
 
     public void keyPressed(KeyEvent e) {

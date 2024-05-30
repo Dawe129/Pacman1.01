@@ -31,22 +31,28 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
         dynamickaStenaY = 2;
         pole[dynamickaStenaY][dynamickaStenaX] = '#';
 
-        Timer timer = new Timer(6000, e -> {
+        Timer stenaTimer = new Timer(6000, e -> {
             pole[dynamickaStenaY][dynamickaStenaX] = '.';
             repaint();
         });
-        timer.setRepeats(false);
-        timer.start();
+        stenaTimer.setRepeats(false);
+        stenaTimer.start();
 
         this.addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
 
         pacman = new Pacman(1, 13, velikostPolicka, 20);
+
+        Timer pohybTimer = new Timer(100, e -> {
+            pacman.pohyb(pole);
+            repaint();
+        });
+        pohybTimer.start();
     }
 
     public void inicializujPoleZeSouboru(String nazev) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("Mapa1.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader(nazev));
         String radek;
         int rada = 0;
         while ((radek = reader.readLine()) != null && rada < vyska) {
