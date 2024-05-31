@@ -18,6 +18,7 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
     private int dynamickaStenaY;
     private int dynamickaStenaX;
     private List<Skore> skore;
+    private Duch duch;
 
     public ObtiznostLehka(int sirka, int vyska, int velikostPolicka) {
         this.sirka = sirka;
@@ -32,7 +33,7 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
         }
 
         dynamickaStenaX = 20;
-        dynamickaStenaY = 2;
+        dynamickaStenaY = 3;
         pole[dynamickaStenaY][dynamickaStenaX] = '#';
 
         Timer timer = new Timer(6000, e -> {
@@ -73,6 +74,13 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
             }
         });
         pohybTimer.start();
+
+        duch = new Duch(22, 2, velikostPolicka, 20);
+        Timer duchTimer = new Timer(500, e -> {
+            duch.pohyb(pole);
+            repaint();
+        });
+        duchTimer.start();
     }
 
     public void inicializujPoleZeSouboru(String nazev) throws IOException {
@@ -110,6 +118,10 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
         for (Skore bod : skore) {
             bod.Kresleni(g);
         }
+
+        if (duch != null) {
+            duch.Kresleni(g);
+        }
     }
 
     public void aktualizujPole(char[][] novePole) {
@@ -141,7 +153,6 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
         int choice = JOptionPane.showOptionDialog(frame, "Gratulace! Sežral jsi všechny koule. Co chceš udělat?", "Konec hry", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[2]);
         switch (choice) {
             case JOptionPane.YES_OPTION:
-                // Hrát znovu
                 frame.getContentPane().removeAll();
                 ObtiznostLehka novaHra = new ObtiznostLehka(sirka, vyska, velikostPolicka);
                 frame.getContentPane().add(novaHra);
@@ -151,18 +162,15 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
                 frame.pack();
                 break;
             case JOptionPane.NO_OPTION:
-                // Menu
                 frame.getContentPane().removeAll();
                 Menu menu = new Menu();
                 menu.setVisible(true);
                 frame.pack();
                 break;
             case JOptionPane.CANCEL_OPTION:
-                // Konec
                 frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
                 break;
         }
-        // Zavřít dialogové okno
         ((JDialog) SwingUtilities.getWindowAncestor(frame)).dispose();
     }
 }
