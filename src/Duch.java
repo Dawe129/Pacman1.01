@@ -1,33 +1,79 @@
-import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.util.Random;
 
 public class Duch implements Postava {
     private int x, y;
-    private int velikost = 20;
+    private int dx, dy;
+    private int velikostPolicka;
+    private int velikost;
+    private Random random;
+    private Image duchImage;
 
-    public Duch(int startX, int startY) {
-        this.x = startX;
-        this.y = startY;
+    public Duch(int x, int y, int velikostPolicka, int velikost) {
+        this.x = x;
+        this.y = y;
+        this.velikostPolicka = velikostPolicka;
+        this.velikost = velikost;
+        this.dx = 0;
+        this.dy = 0;
+        this.random = new Random();
+        nahodnySmer();
+
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        duchImage = toolkit.getImage("duch.png");
+    }
+
+    private void nahodnySmer() {
+        int smer = random.nextInt(4);
+        switch (smer) {
+            case 0:
+                dx = 1;
+                dy = 0;
+                break;
+            case 1:
+                dx = -1;
+                dy = 0;
+                break;
+            case 2:
+                dx = 0;
+                dy = 1;
+                break;
+            case 3:
+                dx = 0;
+                dy = -1;
+                break;
+        }
+    }
+
+    public void pohyb(char[][] pole) {
+        int novaX = x + dx;
+        int novaY = y + dy;
+
+        if (novaX >= 0 && novaX < pole[0].length && novaY >= 0 && novaY < pole.length && pole[novaY][novaX] != '#') {
+            x = novaX;
+            y = novaY;
+        } else {
+            nahodnySmer();
+        }
     }
 
     @Override
     public void Pohyb(int dx, int dy) {
-        this.x += dx;
-        this.y += dy;
     }
 
     @Override
     public void Kresleni(Graphics g) {
-        g.setColor(Color.RED);
-        g.fillRect(x, y, velikost, velikost);
+        g.drawImage(duchImage, x * velikostPolicka, y * velikostPolicka, velikost, velikost, null);
     }
 
     @Override
     public boolean Kolize(Postava postava) {
-        return this.getX() < postava.getX() + postava.getVelikost() &&
-                this.getX() + this.getVelikost() > postava.getX() &&
-                this.getY() < postava.getY() + postava.getVelikost() &&
-                this.getY() + this.getVelikost() > postava.getY();
+        return x < postava.getX() + postava.getVelikost() &&
+                x + velikost > postava.getX() &&
+                y < postava.getY() + postava.getVelikost() &&
+                y + velikost > postava.getY();
     }
 
     @Override

@@ -13,7 +13,7 @@ public class LogikaHry implements ActionListener {
     public LogikaHry(HraciPole hraciPole) {
         this.hraciPole = hraciPole;
         this.pacman = new Pacman(2, 3, 1,1);
-        this.duch = new Duch(10, 10);
+        this.duch = new Duch(10, 10,1,1);
 
         this.timer = new Timer(100, this);
         this.timer.start();
