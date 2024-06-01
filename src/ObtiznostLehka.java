@@ -204,7 +204,7 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
     private void zobrazKonecHry() {
         JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
         Object[] options = {"Hrát znovu", "Menu", "Konec"};
-        int choice = JOptionPane.showOptionDialog(frame, "Gratulace! Sežral jsi všechny koule. Co chceš udělat?", "Konec hry", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[2]);
+        int choice = JOptionPane.showOptionDialog(frame, "Gratulace! Sežral jsi všechny koule. Tvoje konečné skóre je: " + aktualniSkore + ". Co chceš udělat?", "Konec hry", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[2]);
         switch (choice) {
             case JOptionPane.YES_OPTION:
                 frame.getContentPane().removeAll();
@@ -231,7 +231,7 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
     private void zobrazProhru() {
         JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
         Object[] options = {"Hrát znovu", "Menu", "Konec"};
-        int choice = JOptionPane.showOptionDialog(frame, "Prohrál jsi! Duch tě chytil. Co chceš udělat?", "Prohra", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[2]);
+        int choice = JOptionPane.showOptionDialog(frame, "Prohrál jsi! Duch tě chytil. Tvoje konečné skóre je: " + aktualniSkore + ". Co chceš udělat?", "Prohra", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[2]);
         switch (choice) {
             case JOptionPane.YES_OPTION:
                 frame.getContentPane().removeAll();
