@@ -42,13 +42,13 @@ public class Pacman implements Postava {
         }
 
         if (dx > 0) {
-            smer = 0; // vpravo
+            smer = 0;
         } else if (dx < 0) {
-            smer = 2; // vlevo
+            smer = 2;
         } else if (dy > 0) {
-            smer = 1; // dolů
+            smer = 1;
         } else if (dy < 0) {
-            smer = 3; // nahoru
+            smer = 3;
         }
 
         usta = (usta + 1) % 2;

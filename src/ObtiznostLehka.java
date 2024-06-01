@@ -72,6 +72,8 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
             if (skore.isEmpty()) {
                 zobrazKonecHry();
             }
+
+            kontrolaStretuDuchaSPacmanem();
         });
         pohybTimer.start();
 
@@ -79,6 +81,7 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
         Timer duchTimer = new Timer(500, e -> {
             duch.pohyb(pole);
             repaint();
+            kontrolaStretuDuchaSPacmanem();
         });
         duchTimer.start();
     }
@@ -172,5 +175,40 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
                 break;
         }
         ((JDialog) SwingUtilities.getWindowAncestor(frame)).dispose();
+    }
+
+    private void zobrazProhru() {
+        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        Object[] options = {"Hrát znovu", "Menu", "Konec"};
+        int choice = JOptionPane.showOptionDialog(frame, "Prohrál jsi! Duch tě chytil. Co chceš udělat?", "Prohra", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[2]);
+        switch (choice) {
+            case JOptionPane.YES_OPTION:
+                frame.getContentPane().removeAll();
+                ObtiznostLehka novaHra = new ObtiznostLehka(sirka, vyska, velikostPolicka);
+                frame.getContentPane().add(novaHra);
+                frame.getContentPane().revalidate();
+                frame.getContentPane().repaint();
+                novaHra.requestFocusInWindow();
+                frame.pack();
+                break;
+            case JOptionPane.NO_OPTION:
+                frame.getContentPane().removeAll();
+                Menu menu = new Menu();
+                menu.setVisible(true);
+                frame.pack();
+                break;
+            case JOptionPane.CANCEL_OPTION:
+                frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
+                break;
+        }
+        ((JDialog) SwingUtilities.getWindowAncestor(frame)).dispose();
+    }
+
+    private void kontrolaStretuDuchaSPacmanem() {
+        if (duch != null && pacman != null) {
+            if (duch.getX() == pacman.getX() && duch.getY() == pacman.getY()) {
+                zobrazProhru();
+            }
+        }
     }
 }
