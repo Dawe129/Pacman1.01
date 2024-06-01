@@ -19,6 +19,7 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
     private int dynamickaStenaX;
     private List<Skore> skore;
     private List<Duch> duchove;
+    private List<ZamerenyDuch> duchove1;
 
     public ObtiznostLehka(int sirka, int vyska, int velikostPolicka) {
         this.sirka = sirka;
@@ -27,6 +28,7 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
         this.pole = new char[vyska][sirka];
         this.skore = new ArrayList<>();
         this.duchove = new ArrayList<>();
+        this.duchove1 = new ArrayList<>();
         try {
             inicializujPoleZeSouboru("Mapa1.txt");
         } catch (IOException e) {
@@ -37,7 +39,7 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
         dynamickaStenaY = 3;
         pole[dynamickaStenaY][dynamickaStenaX] = '#';
 
-        Timer timer = new Timer(6000, e -> {
+        Timer timer = new Timer(3000, e -> {
             pole[dynamickaStenaY][dynamickaStenaX] = '.';
             repaint();
         });
@@ -80,11 +82,18 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
 
         Duch duch1 = new Duch(22, 2, velikostPolicka, 20);
         Duch duch2 = new Duch(23, 2, velikostPolicka, 20);
+        ZamerenyDuch duch3 = new ZamerenyDuch(21, 2, velikostPolicka, 20, pacman);
+        duch1.nastavRychlost(2);
+        duch2.nastavRychlost(6);
         duchove.add(duch1);
         duchove.add(duch2);
+        duchove1.add(duch3);
 
         Timer duchTimer = new Timer(500, e -> {
             for (Duch duch : duchove) {
+                duch.pohyb(pole);
+            }
+            for (ZamerenyDuch duch : duchove1) {
                 duch.pohyb(pole);
             }
             repaint();
@@ -132,6 +141,10 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
         for (Duch duch : duchove) {
             duch.Kresleni(g);
         }
+
+        for (ZamerenyDuch duch : duchove1) {
+            duch.Kresleni(g);
+        }
     }
 
     public void aktualizujPole(char[][] novePole) {
@@ -150,14 +163,22 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
     }
 
     @Override
-    public void keyReleased(KeyEvent e) {}
+    public void keyReleased(KeyEvent e) {
+    }
 
     @Override
-    public void keyTyped(KeyEvent e) {}
+    public void keyTyped(KeyEvent e) {
+    }
 
     private void kontrolaStretuDuchaSPacmanem() {
         if (pacman != null) {
             for (Duch duch : duchove) {
+                if (duch.getX() == pacman.getX() && duch.getY() == pacman.getY()) {
+                    zobrazProhru();
+                    return;
+                }
+            }
+            for (ZamerenyDuch duch : duchove1) {
                 if (duch.getX() == pacman.getX() && duch.getY() == pacman.getY()) {
                     zobrazProhru();
                     return;

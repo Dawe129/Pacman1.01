@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Ukonceni hry po stretu duch s pacmanam">
+    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="pridani vice duchu">
+      <change afterPath="$PROJECT_DIR$/src/ZamerenyDuch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mapa1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Mapa1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Duch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Duch.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostLehka.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostLehka.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Duch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Duch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ObtiznostLehka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostLehka.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +91,7 @@
       <workItem from="1717074196056" duration="2860000" />
       <workItem from="1717180589312" duration="6778000" />
       <workItem from="1717226369880" duration="429000" />
-      <workItem from="1717229375709" duration="1564000" />
+      <workItem from="1717229375709" duration="3249000" />
     </task>
     <task id="LOCAL-00001" summary="Vytvoreni tridy LogikaHry ktera dedi od JPanelu a implementuje ActionListener">
       <created>1714685215534</created>
@@ -299,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717230542309</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="pridani vice duchu">
+      <created>1717233266520</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1717233266520</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +328,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Vytvoreni hraci plochy + nastaveni pohybu pacmana" />
     <MESSAGE value="Vytvoreni tridy pro Pacmana, ducha, skore, hraci polealogiku hry" />
     <MESSAGE value="Nastaveni vlastnosti pro pacmana a duchy + kostra metod pro pohyb a kresleni" />
     <MESSAGE value="Pridani rozhrani Postava ktere je iplementovano do tridy Pacman a Duch + pridani metody kolize do tridy Duch" />
@@ -342,6 +352,7 @@
     <MESSAGE value="pridani metod pro chozeni do tridy Duc" />
     <MESSAGE value="vypis a pohyb pacmana ve tride ObtiznostLehka" />
     <MESSAGE value="Ukonceni hry po stretu duch s pacmanam" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ukonceni hry po stretu duch s pacmanam" />
+    <MESSAGE value="pridani vice duchu" />
+    <option name="LAST_COMMIT_MESSAGE" value="pridani vice duchu" />
   </component>
 </project>

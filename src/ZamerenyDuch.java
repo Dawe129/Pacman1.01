@@ -1,70 +1,57 @@
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.util.Random;
+import java.awt.*;
 
-public class Duch implements Postava {
+public class ZamerenyDuch implements Postava {
     private int x, y;
     private int dx, dy;
     private int velikostPolicka;
     private int velikost;
-    private int rychlost;
-    private Random random;
+    private Pacman hrac;
     private Image duchImage;
 
-    public Duch(int x, int y, int velikostPolicka, int velikost) {
+    public ZamerenyDuch(int x, int y, int velikostPolicka, int velikost, Pacman hrac) {
         this.x = x;
         this.y = y;
         this.velikostPolicka = velikostPolicka;
         this.velikost = velikost;
+        this.hrac = hrac;
         this.dx = 0;
         this.dy = 0;
-        this.random = new Random();
-        nahodnySmer();
 
         Toolkit toolkit = Toolkit.getDefaultToolkit();
-        duchImage = toolkit.getImage("duch.png");
-    }
-
-    private void nahodnySmer() {
-        int smer = random.nextInt(4);
-        switch (smer) {
-            case 0:
-                dx = 1;
-                dy = 0;
-                break;
-            case 1:
-                dx = -1;
-                dy = 0;
-                break;
-            case 2:
-                dx = 0;
-                dy = 1;
-                break;
-            case 3:
-                dx = 0;
-                dy = -1;
-                break;
-        }
+        duchImage = toolkit.getImage("zamereny_duch.png");
     }
 
     public void pohyb(char[][] pole) {
-        int novaX = x + dx;
-        int novaY = y + dy;
+        int hracX = hrac.getX();
+        int hracY = hrac.getY();
+
+        int novyDx = 0;
+        int novyDy = 0;
+
+        if (x < hracX) {
+            novyDx = 1;
+        } else if (x > hracX) {
+            novyDx = -1;
+        }
+
+        if (y < hracY) {
+            novyDy = 1;
+        } else if (y > hracY) {
+            novyDy = -1;
+        }
+
+        int novaX = x + novyDx;
+        int novaY = y + novyDy;
 
         if (novaX >= 0 && novaX < pole[0].length && novaY >= 0 && novaY < pole.length && pole[novaY][novaX] != '#') {
             x = novaX;
             y = novaY;
-        } else {
-            nahodnySmer();
         }
-    }
-    public void nastavRychlost(int novaRychlost) {
-        this.rychlost = novaRychlost;
     }
 
     @Override
     public void Pohyb(int dx, int dy) {
+
     }
 
     @Override
