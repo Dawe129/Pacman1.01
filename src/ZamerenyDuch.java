@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.Random;
 
 public class ZamerenyDuch implements Postava {
     private int x, y;
@@ -6,7 +7,10 @@ public class ZamerenyDuch implements Postava {
     private int velikostPolicka;
     private int velikost;
     private Pacman hrac;
+    private Random random;
     private Image duchImage;
+    private int startX, startY;
+    private boolean bojiSe;
 
     public ZamerenyDuch(int x, int y, int velikostPolicka, int velikost, Pacman hrac) {
         this.x = x;
@@ -16,6 +20,10 @@ public class ZamerenyDuch implements Postava {
         this.hrac = hrac;
         this.dx = 0;
         this.dy = 0;
+        this.random = new Random();
+        this.startX = x;
+        this.startY = y;
+        this.bojiSe = false;
 
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         duchImage = toolkit.getImage("zamereny_duch.png");
@@ -49,9 +57,38 @@ public class ZamerenyDuch implements Postava {
         }
     }
 
+    public void utekOdPacmana(Pacman pacman, char[][] pole) {
+        int pacmanX = pacman.getX();
+        int pacmanY = pacman.getY();
+
+        if (bojiSe) {
+            if (x < pacmanX) dx = -1;
+            if (x > pacmanX) dx = 1;
+            if (y < pacmanY) dy = -1;
+            if (y > pacmanY) dy = 1;
+        } else {
+            pohyb(pole);
+        }
+        pohyb(pole);
+    }
+
+    public void nastavBojiSe(boolean bojiSe) {
+        this.bojiSe = bojiSe;
+    }
+
+    public boolean getBojiSe() {
+        return bojiSe;
+    }
+
+    public void teleportNaPocatecniMisto() {
+        this.x = startX;
+        this.y = startY;
+        this.bojiSe = false;
+    }
+
     @Override
     public void Pohyb(int dx, int dy) {
-
+        // Implementace rozhraní, ale není použita v této třídě
     }
 
     @Override
