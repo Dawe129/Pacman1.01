@@ -1,30 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Pacman1.01:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Pridani tridy totem + pridani metody pro utek duchu">
+    <list default="true" id="4ec80643-aeb0-4bc3-87be-f24570253e8b" name="Changes" comment="Pridani do">
+      <change afterPath="$PROJECT_DIR$/src/Testy/PacmanTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Testy/ZamerenyDuchTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Duch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Duch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostLehka.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostLehka.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostStredni.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostStredni.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostTezka.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostTezka.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/ZamerenyDuch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman1.01/ZamerenyDuch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Duch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Duch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HraciPole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HraciPole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LogikaHry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogikaHry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObtiznostLehka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostLehka.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObtiznostStredni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostStredni.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObtiznostTezka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtiznostTezka.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pacman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pacman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Skore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Skore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ZamerenyDuch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ZamerenyDuch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacman1.01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman1.01.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Duch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/HraciPole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry$TAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/LogikaHry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Menu$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostLehka.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostStredni.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/ObtiznostTezka.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Pacman.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Postava.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Skore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/Totem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacman1.01/ZamerenyDuch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Duch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tridy/Duch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HraciPole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tridy/HraciPole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogikaHry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tridy/LogikaHry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tridy/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tridy/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ObtiznostLehka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tridy/ObtiznostLehka.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ObtiznostStredni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tridy/ObtiznostStredni.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ObtiznostTezka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tridy/ObtiznostTezka.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pacman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tridy/Pacman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Postava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tridy/Postava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Skore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tridy/Skore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Totem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tridy/Totem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ZamerenyDuch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tridy/ZamerenyDuch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,21 +84,116 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Honza/IdeaProjects/Pacman1.01&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Honza/Downloads/Pacman1.04",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="PacmanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pacman1.01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Testy" />
+      <option name="MAIN_CLASS_NAME" value="Testy.PacmanTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Testy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pacman1.01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Testy" />
+      <option name="MAIN_CLASS_NAME" value="Testy.Testy" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Testy.testAkceTlacitkaProLehkouObtiznost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pacman1.01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Testy" />
+      <option name="MAIN_CLASS_NAME" value="Testy.Testy" />
+      <option name="METHOD_NAME" value="testAkceTlacitkaProLehkouObtiznost" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Testy.testNacteniPoleZeSouboru" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pacman1.01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Testy" />
+      <option name="MAIN_CLASS_NAME" value="Testy.Testy" />
+      <option name="METHOD_NAME" value="testNacteniPoleZeSouboru" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZamerenyDuchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pacman1.01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Testy" />
+      <option name="MAIN_CLASS_NAME" value="Testy.ZamerenyDuchTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PacmanTest" />
+        <item itemvalue="JUnit.ZamerenyDuchTest" />
+        <item itemvalue="JUnit.Testy.testAkceTlacitkaProLehkouObtiznost" />
+        <item itemvalue="JUnit.Testy" />
+        <item itemvalue="JUnit.Testy.testNacteniPoleZeSouboru" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -106,6 +222,9 @@
       <workItem from="1717226369880" duration="429000" />
       <workItem from="1717229375709" duration="7035000" />
       <workItem from="1717252127342" duration="12550000" />
+      <workItem from="1717271360914" duration="2067000" />
+      <workItem from="1717275893054" duration="663000" />
+      <workItem from="1717277664525" duration="562000" />
     </task>
     <task id="LOCAL-00001" summary="Vytvoreni tridy LogikaHry ktera dedi od JPanelu a implementuje ActionListener">
       <created>1714685215534</created>
