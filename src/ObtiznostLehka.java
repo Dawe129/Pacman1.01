@@ -18,7 +18,7 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
     private int dynamickaStenaY;
     private int dynamickaStenaX;
     private List<Skore> skore;
-    private Duch duch;
+    private List<Duch> duchove;
 
     public ObtiznostLehka(int sirka, int vyska, int velikostPolicka) {
         this.sirka = sirka;
@@ -26,6 +26,7 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
         this.velikostPolicka = velikostPolicka;
         this.pole = new char[vyska][sirka];
         this.skore = new ArrayList<>();
+        this.duchove = new ArrayList<>();
         try {
             inicializujPoleZeSouboru("Mapa1.txt");
         } catch (IOException e) {
@@ -77,9 +78,15 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
         });
         pohybTimer.start();
 
-        duch = new Duch(22, 2, velikostPolicka, 20);
+        Duch duch1 = new Duch(22, 2, velikostPolicka, 20);
+        Duch duch2 = new Duch(23, 2, velikostPolicka, 20);
+        duchove.add(duch1);
+        duchove.add(duch2);
+
         Timer duchTimer = new Timer(500, e -> {
-            duch.pohyb(pole);
+            for (Duch duch : duchove) {
+                duch.pohyb(pole);
+            }
             repaint();
             kontrolaStretuDuchaSPacmanem();
         });
@@ -122,7 +129,7 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
             bod.Kresleni(g);
         }
 
-        if (duch != null) {
+        for (Duch duch : duchove) {
             duch.Kresleni(g);
         }
     }
@@ -143,11 +150,20 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
     }
 
     @Override
-    public void keyReleased(KeyEvent e) {
-    }
+    public void keyReleased(KeyEvent e) {}
 
     @Override
-    public void keyTyped(KeyEvent e) {
+    public void keyTyped(KeyEvent e) {}
+
+    private void kontrolaStretuDuchaSPacmanem() {
+        if (pacman != null) {
+            for (Duch duch : duchove) {
+                if (duch.getX() == pacman.getX() && duch.getY() == pacman.getY()) {
+                    zobrazProhru();
+                    return;
+                }
+            }
+        }
     }
 
     private void zobrazKonecHry() {
@@ -202,13 +218,5 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
                 break;
         }
         ((JDialog) SwingUtilities.getWindowAncestor(frame)).dispose();
-    }
-
-    private void kontrolaStretuDuchaSPacmanem() {
-        if (duch != null && pacman != null) {
-            if (duch.getX() == pacman.getX() && duch.getY() == pacman.getY()) {
-                zobrazProhru();
-            }
-        }
     }
 }
