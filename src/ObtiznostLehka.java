@@ -15,11 +15,11 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
     private int vyska;
     private int velikostPolicka;
     private Pacman pacman;
-    private int dynamickaStenaY;
-    private int dynamickaStenaX;
     private List<Skore> skore;
     private List<Duch> duchove;
     private List<ZamerenyDuch> duchove1;
+    private List<Point> dynamickaStenaPozice;
+    private int aktualniSkore;
 
     public ObtiznostLehka(int sirka, int vyska, int velikostPolicka) {
         this.sirka = sirka;
@@ -29,18 +29,25 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
         this.skore = new ArrayList<>();
         this.duchove = new ArrayList<>();
         this.duchove1 = new ArrayList<>();
+        this.dynamickaStenaPozice = new ArrayList<>();
+        this.aktualniSkore = 0;
         try {
             inicializujPoleZeSouboru("Mapa1.txt");
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        dynamickaStenaX = 20;
-        dynamickaStenaY = 3;
-        pole[dynamickaStenaY][dynamickaStenaX] = '#';
+        dynamickaStenaPozice.add(new Point(21, 4));
+        dynamickaStenaPozice.add(new Point(20, 3));
+
+        for (Point pozice : dynamickaStenaPozice) {
+            pole[pozice.y][pozice.x] = '#';
+        }
 
         Timer timer = new Timer(3000, e -> {
-            pole[dynamickaStenaY][dynamickaStenaX] = '.';
+            for (Point pozice : dynamickaStenaPozice) {
+                pole[pozice.y][pozice.x] = '.';
+            }
             repaint();
         });
         timer.setRepeats(false);
@@ -66,6 +73,7 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
                 Skore bod = skore.get(k);
                 if (pacman.getX() == bod.getX() && pacman.getY() == bod.getY()) {
                     pacman.pridejSkore(bod.getHodnota());
+                    aktualniSkore += bod.getHodnota();
                     skore.remove(bod);
                     k--;
                 }
@@ -82,12 +90,14 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
 
         Duch duch1 = new Duch(22, 2, velikostPolicka, 20);
         Duch duch2 = new Duch(23, 2, velikostPolicka, 20);
-        ZamerenyDuch duch3 = new ZamerenyDuch(21, 2, velikostPolicka, 20, pacman);
+        Duch duch3 = new Duch(3, 7, velikostPolicka, 20);
+        ZamerenyDuch duch4 = new ZamerenyDuch(21, 2, velikostPolicka, 20, pacman);
         duch1.nastavRychlost(2);
         duch2.nastavRychlost(6);
         duchove.add(duch1);
         duchove.add(duch2);
-        duchove1.add(duch3);
+        duchove.add(duch3);
+        duchove1.add(duch4);
 
         Timer duchTimer = new Timer(500, e -> {
             for (Duch duch : duchove) {
@@ -145,6 +155,10 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
         for (ZamerenyDuch duch : duchove1) {
             duch.Kresleni(g);
         }
+
+        g.setColor(Color.WHITE);
+        g.setFont(new Font("Arial", Font.BOLD, 20));
+        g.drawString("Skóre: " + aktualniSkore, 10, getHeight() - 10);
     }
 
     public void aktualizujPole(char[][] novePole) {

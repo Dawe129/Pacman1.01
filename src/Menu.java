@@ -21,7 +21,7 @@ public class Menu extends JFrame {
         easyButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                spustitHru(new ObtiznostLehka(25, 21, 20));
+                spustitHru(new ObtiznostLehka(25, 17, 20));
             }
         });
         panel.add(easyButton);
@@ -30,7 +30,7 @@ public class Menu extends JFrame {
         mediumButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                spustitHru(new ObtiznostStredni(30, 20, 20));
+                spustitHru(new ObtiznostStredni(30, 22, 20));
             }
         });
         panel.add(mediumButton);
@@ -39,7 +39,7 @@ public class Menu extends JFrame {
         hardButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                spustitHru(new ObtiznostTezka(40, 20, 20));
+                spustitHru(new ObtiznostTezka(40, 22, 20));
             }
         });
         panel.add(hardButton);

@@ -19,6 +19,7 @@ public class ObtiznostTezka extends JPanel implements KeyListener {
     private List<Duch> duchove;
     private List<ZamerenyDuch> duchove1;
     private List<Point> dynamickaStenaPozice;
+    private int aktualniSkore;
 
     public ObtiznostTezka(int sirka, int vyska, int velikostPolicka) {
         this.sirka = sirka;
@@ -29,6 +30,7 @@ public class ObtiznostTezka extends JPanel implements KeyListener {
         this.duchove = new ArrayList<>();
         this.duchove1 = new ArrayList<>();
         this.dynamickaStenaPozice = new ArrayList<>();
+        this.aktualniSkore = 0;
         try {
             inicializujPoleZeSouboru("Mapa.txt");
         } catch (IOException e) {
@@ -73,6 +75,7 @@ public class ObtiznostTezka extends JPanel implements KeyListener {
                 Skore bod = skore.get(k);
                 if (pacman.getX() == bod.getX() && pacman.getY() == bod.getY()) {
                     pacman.pridejSkore(bod.getHodnota());
+                    aktualniSkore += bod.getHodnota();
                     skore.remove(bod);
                     k--;
                 }
@@ -166,6 +169,10 @@ public class ObtiznostTezka extends JPanel implements KeyListener {
         for (ZamerenyDuch duch : duchove1) {
             duch.Kresleni(g);
         }
+
+        g.setColor(Color.WHITE);
+        g.setFont(new Font("Arial", Font.BOLD, 20));
+        g.drawString("Skóre: " + aktualniSkore, 10, getHeight() - 10);
     }
 
     public void aktualizujPole(char[][] novePole) {

@@ -23,7 +23,7 @@ public class Duch implements Postava {
         nahodnySmer();
 
         Toolkit toolkit = Toolkit.getDefaultToolkit();
-        duchImage = toolkit.getImage("duch.png");
+        duchImage = toolkit.getImage("Duch.png");
     }
 
     private void nahodnySmer() {
