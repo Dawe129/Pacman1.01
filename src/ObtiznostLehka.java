@@ -9,6 +9,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Třída reprezentující obtížnost hry na lehkou úroveň. Implementuje herní logiku
+ * a zobrazuje herní pole pro lehkou obtížnost.
+ */
 public class ObtiznostLehka extends JPanel implements KeyListener {
     private char[][] pole;
     private int sirka;
@@ -21,6 +25,14 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
     private List<Point> dynamickaStenaPozice;
     private int aktualniSkore;
 
+    /**
+     * Konstruktor pro třídu ObtiznostLehka.
+     * Inicializuje herní pole, hráče, duchy a další herní prvky.
+     *
+     * @param sirka           Šířka herního pole.
+     * @param vyska           Výška herního pole.
+     * @param velikostPolicka Velikost jednoho herního políčka.
+     */
     public ObtiznostLehka(int sirka, int vyska, int velikostPolicka) {
         this.sirka = sirka;
         this.vyska = vyska;
@@ -112,6 +124,12 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
         duchTimer.start();
     }
 
+    /**
+     * Inicializuje herní pole na základě souboru.
+     *
+     * @param nazev Název souboru obsahujícího herní pole.
+     * @throws IOException Pokud dojde k chybě při čtení ze souboru.
+     */
     public void inicializujPoleZeSouboru(String nazev) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader("Mapa1.txt"));
         String radek;
@@ -161,6 +179,11 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
         g.drawString("Skóre: " + aktualniSkore, 10, getHeight() - 10);
     }
 
+    /**
+     * Aktualizuje herní pole na základě nového pole.
+     *
+     * @param novePole Nové pole reprezentující stav hry.
+     */
     public void aktualizujPole(char[][] novePole) {
         this.pole = novePole;
         repaint();
@@ -187,20 +210,24 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
     private void kontrolaStretuDuchaSPacmanem() {
         if (pacman != null) {
             for (Duch duch : duchove) {
-                if (duch.getX() == pacman.getX() && duch.getY() == pacman.getY()) {
-                    zobrazProhru();
-                    return;
-                }
-            }
-            for (ZamerenyDuch duch : duchove1) {
-                if (duch.getX() == pacman.getX() && duch.getY() == pacman.getY()) {
+                if (duch != null && duch.getX() == pacman.getX() && duch.getY() == pacman.getY()) {
                     zobrazProhru();
                     return;
                 }
             }
         }
+        for (ZamerenyDuch duch : duchove1) {
+            if (duch.getX() == pacman.getX() && duch.getY() == pacman.getY()) {
+                zobrazProhru();
+                return;
+            }
+        }
     }
 
+
+    /**
+     * Zobrazí dialogové okno oznamující výhru a nabízí možnosti hrát znovu, přejít do menu nebo ukončit hru.
+     */
     private void zobrazKonecHry() {
         JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
         Object[] options = {"Hrát znovu", "Menu", "Konec"};
@@ -228,6 +255,9 @@ public class ObtiznostLehka extends JPanel implements KeyListener {
         ((JDialog) SwingUtilities.getWindowAncestor(frame)).dispose();
     }
 
+    /**
+     * Zobrazí dialogové okno oznamující prohru a nabízí možnosti hrát znovu, přejít do menu nebo ukončit hru.
+     */
     private void zobrazProhru() {
         JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
         Object[] options = {"Hrát znovu", "Menu", "Konec"};

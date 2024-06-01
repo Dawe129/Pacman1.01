@@ -3,8 +3,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Třída Menu představuje hlavní menu hry Pacman.
+ */
 public class Menu extends JFrame {
 
+    /**
+     * Konstruktor vytváří nové okno menu.
+     */
     public Menu() {
         setTitle("Pacman Menu");
         setSize(300, 300);
@@ -56,6 +62,11 @@ public class Menu extends JFrame {
         add(panel);
     }
 
+    /**
+     * Spustí hru s danou obtížností.
+     *
+     * @param obtiznost obtížnost hry
+     */
     private void spustitHru(JPanel obtiznost) {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Hraci pole");
@@ -73,6 +84,9 @@ public class Menu extends JFrame {
         dispose();
     }
 
+    /**
+     * Ukončí běh programu.
+     */
     private void ukoncitProgram() {
         System.exit(0);
     }

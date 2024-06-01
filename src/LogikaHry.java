@@ -4,16 +4,24 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.Timer;
 
+/**
+ * Třída LogikaHry řídí průběh hry, včetně pohybu Pacmana a aktualizace herního pole.
+ */
 public class LogikaHry implements ActionListener {
     private HraciPole hraciPole;
     private Pacman pacman;
     private Duch duch;
     private Timer timer;
 
+    /**
+     * Konstruktor vytváří instanci LogikaHry s herním polem.
+     *
+     * @param hraciPole herní pole, na kterém se hra odehrává
+     */
     public LogikaHry(HraciPole hraciPole) {
         this.hraciPole = hraciPole;
-        this.pacman = new Pacman(2, 3, 1,1);
-        this.duch = new Duch(10, 10,1,1);
+        this.pacman = new Pacman(2, 3, 1, 1);
+        this.duch = new Duch(10, 10, 1, 1);
 
         this.timer = new Timer(100, this);
         this.timer.start();
@@ -28,7 +36,9 @@ public class LogikaHry implements ActionListener {
         hraciPole.repaint();
     }
 
-
+    /**
+     * Adaptér pro zachytávání klávesových událostí pro ovládání Pacmana.
+     */
     private class TAdapter extends KeyAdapter {
         @Override
         public void keyPressed(KeyEvent e) {
@@ -56,10 +66,20 @@ public class LogikaHry implements ActionListener {
         }
     }
 
+    /**
+     * Vrátí instanci Pacmana.
+     *
+     * @return instance Pacmana
+     */
     public Pacman getPacman() {
         return pacman;
     }
 
+    /**
+     * Vrátí instanci Ducha.
+     *
+     * @return instance Ducha
+     */
     public Duch getDuch() {
         return duch;
     }

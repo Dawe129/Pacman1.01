@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Třída ObtiznostStredni představuje obtížnější úroveň hry Pacman.
+ */
 public class ObtiznostStredni extends JPanel implements KeyListener {
     private char[][] pole;
     private int sirka;
@@ -21,6 +24,12 @@ public class ObtiznostStredni extends JPanel implements KeyListener {
     private List<Point> dynamickaStenaPozice;
     private int aktualniSkore;
 
+    /**
+     * Konstruktor vytváří obtížnější úroveň hry Pacman.
+     * @param sirka šířka herního pole
+     * @param vyska výška herního pole
+     * @param velikostPolicka velikost jednoho políčka
+     */
     public ObtiznostStredni(int sirka, int vyska, int velikostPolicka) {
         this.sirka = sirka;
         this.vyska = vyska;
@@ -112,6 +121,11 @@ public class ObtiznostStredni extends JPanel implements KeyListener {
         duchTimer.start();
     }
 
+    /**
+     * Inicializuje pole z textového souboru.
+     * @param nazev název textového souboru
+     * @throws IOException výjimka při chybě čtení ze souboru
+     */
     public void inicializujPoleZeSouboru(String nazev) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader("Mapa2.txt"));
         String radek;
@@ -161,6 +175,10 @@ public class ObtiznostStredni extends JPanel implements KeyListener {
         g.drawString("Skóre: " + aktualniSkore, 10, getHeight() - 10);
     }
 
+    /**
+     * Aktualizuje herní pole.
+     * @param novePole nové herní pole
+     */
     public void aktualizujPole(char[][] novePole) {
         this.pole = novePole;
         repaint();

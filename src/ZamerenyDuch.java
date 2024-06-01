@@ -1,6 +1,9 @@
 import java.awt.*;
 import java.util.Random;
 
+/**
+ * Třída reprezentující zákeřného ducha, který se snaží pronásledovat hráče.
+ */
 public class ZamerenyDuch implements Postava {
     private int x, y;
     private int dx, dy;
@@ -9,9 +12,15 @@ public class ZamerenyDuch implements Postava {
     private Pacman hrac;
     private Random random;
     private Image duchImage;
-    private int startX, startY;
-    private boolean bojiSe;
 
+    /**
+     * Konstruktor pro vytvoření instance zákeřného ducha.
+     * @param x                 počáteční pozice x
+     * @param y                 počáteční pozice y
+     * @param velikostPolicka  velikost jednoho políčka
+     * @param velikost          velikost ducha
+     * @param hrac              instance hráče
+     */
     public ZamerenyDuch(int x, int y, int velikostPolicka, int velikost, Pacman hrac) {
         this.x = x;
         this.y = y;
@@ -21,14 +30,15 @@ public class ZamerenyDuch implements Postava {
         this.dx = 0;
         this.dy = 0;
         this.random = new Random();
-        this.startX = x;
-        this.startY = y;
-        this.bojiSe = false;
 
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         duchImage = toolkit.getImage("zamereny_duch.png");
     }
 
+    /**
+     * Metoda pro pohyb zákeřného ducha směrem k hráči.
+     * @param pole  herní pole
+     */
     public void pohyb(char[][] pole) {
         int hracX = hrac.getX();
         int hracY = hrac.getY();
@@ -57,38 +67,8 @@ public class ZamerenyDuch implements Postava {
         }
     }
 
-    public void utekOdPacmana(Pacman pacman, char[][] pole) {
-        int pacmanX = pacman.getX();
-        int pacmanY = pacman.getY();
-
-        if (bojiSe) {
-            if (x < pacmanX) dx = -1;
-            if (x > pacmanX) dx = 1;
-            if (y < pacmanY) dy = -1;
-            if (y > pacmanY) dy = 1;
-        } else {
-            pohyb(pole);
-        }
-        pohyb(pole);
-    }
-
-    public void nastavBojiSe(boolean bojiSe) {
-        this.bojiSe = bojiSe;
-    }
-
-    public boolean getBojiSe() {
-        return bojiSe;
-    }
-
-    public void teleportNaPocatecniMisto() {
-        this.x = startX;
-        this.y = startY;
-        this.bojiSe = false;
-    }
-
     @Override
     public void Pohyb(int dx, int dy) {
-        // Implementace rozhraní, ale není použita v této třídě
     }
 
     @Override

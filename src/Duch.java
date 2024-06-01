@@ -1,30 +1,33 @@
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Toolkit;
+import java.awt.*;
 import java.util.Random;
 
+/**
+ * Třída reprezentující ducha v herním světě.
+ */
 public class Duch implements Postava {
-    protected int x, y;
-    private int startX, startY;
+    private int x, y;
     private int dx, dy;
     private int velikostPolicka;
     private int velikost;
     private int rychlost;
-    private boolean bojiSe;
     private Random random;
     private Image duchImage;
 
+    /**
+     * Konstruktor pro vytvoření instance ducha se zadanými parametry.
+     *
+     * @param x počáteční x-ová souřadnice ducha
+     * @param y počáteční y-ová souřadnice ducha
+     * @param velikostPolicka velikost políčka ve hře
+     * @param velikost velikost ducha
+     */
     public Duch(int x, int y, int velikostPolicka, int velikost) {
         this.x = x;
         this.y = y;
-        this.startX = x;
-        this.startY = y;
         this.velikostPolicka = velikostPolicka;
         this.velikost = velikost;
         this.dx = 0;
         this.dy = 0;
-        this.rychlost = 1;
-        this.bojiSe = false;
         this.random = new Random();
         nahodnySmer();
 
@@ -32,6 +35,9 @@ public class Duch implements Postava {
         duchImage = toolkit.getImage("Duch.png");
     }
 
+    /**
+     * Nastaví náhodný směr pohybu ducha.
+     */
     private void nahodnySmer() {
         int smer = random.nextInt(4);
         switch (smer) {
@@ -54,9 +60,14 @@ public class Duch implements Postava {
         }
     }
 
+    /**
+     * Realizuje pohyb ducha na základě aktuálního pole.
+     *
+     * @param pole herní pole, ve kterém se duch pohybuje
+     */
     public void pohyb(char[][] pole) {
-        int novaX = x + dx * rychlost;
-        int novaY = y + dy * rychlost;
+        int novaX = x + dx;
+        int novaY = y + dy;
 
         if (novaX >= 0 && novaX < pole[0].length && novaY >= 0 && novaY < pole.length && pole[novaY][novaX] != '#') {
             x = novaX;
@@ -66,34 +77,13 @@ public class Duch implements Postava {
         }
     }
 
-    public void utekOdPacmana(Pacman pacman, char[][] pole) {
-        int pacmanX = pacman.getX();
-        int pacmanY = pacman.getY();
-
-        if (bojiSe) {
-            if (x < pacmanX) dx = -1;
-            if (x > pacmanX) dx = 1;
-            if (y < pacmanY) dy = -1;
-            if (y > pacmanY) dy = 1;
-        } else {
-            nahodnySmer();
-        }
-
-        pohyb(pole);
-    }
-
+    /**
+     * Nastaví rychlost ducha.
+     *
+     * @param novaRychlost nová rychlost ducha
+     */
     public void nastavRychlost(int novaRychlost) {
         this.rychlost = novaRychlost;
-    }
-
-    public void nastavBojiSe(boolean bojiSe) {
-        this.bojiSe = bojiSe;
-    }
-
-    public void teleportNaPocatecniMisto() {
-        this.x = startX;
-        this.y = startY;
-        this.bojiSe = false;
     }
 
     @Override

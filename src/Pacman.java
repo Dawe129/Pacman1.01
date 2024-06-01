@@ -2,6 +2,9 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 
+/**
+ * Třída reprezentující postavu Pacmana.
+ */
 public class Pacman implements Postava {
     private int x, y;
     private int dx, dy;
@@ -12,6 +15,14 @@ public class Pacman implements Postava {
     private int smer;
     private int usta;
 
+    /**
+     * Konstruktor pro třídu Pacman.
+     *
+     * @param x Počáteční x-ová pozice Pacmana.
+     * @param y Počáteční y-ová pozice Pacmana.
+     * @param velikostPolicka Velikost jednoho herního políčka.
+     * @param velikost Velikost Pacmana.
+     */
     public Pacman(int x, int y, int velikostPolicka, int velikost) {
         this.x = x;
         this.y = y;
@@ -23,15 +34,31 @@ public class Pacman implements Postava {
         this.usta = 0;
     }
 
+    /**
+     * Nastaví směr pohybu Pacmana.
+     *
+     * @param dx Směr pohybu v ose x.
+     * @param dy Směr pohybu v ose y.
+     */
     public void nastavSmer(int dx, int dy) {
         this.dx = dx;
         this.dy = dy;
     }
 
+    /**
+     * Přidá skóre Pacmanovi.
+     *
+     * @param body Počet bodů, které mají být přidány k aktuálnímu skóre.
+     */
     public void pridejSkore(int body) {
         this.skore += body;
     }
 
+    /**
+     * Provádí pohyb Pacmana na základě aktuálního směru.
+     *
+     * @param pole Herní pole.
+     */
     public void pohyb(char[][] pole) {
         int novaX = x + dx;
         int novaY = y + dy;
@@ -54,6 +81,11 @@ public class Pacman implements Postava {
         usta = (usta + 1) % 2;
     }
 
+    /**
+     * Zpracovává stisknutí kláves pro pohyb Pacmana.
+     *
+     * @param e KeyEvent objekt obsahující informace o stisknutí klávesy.
+     */
     public void keyPressed(KeyEvent e) {
         int keyCode = e.getKeyCode();
         switch (keyCode) {
@@ -72,10 +104,20 @@ public class Pacman implements Postava {
         }
     }
 
+    /**
+     * Vrací hodnotu dx (směr pohybu v ose x).
+     *
+     * @return Hodnota dx.
+     */
     public int getDx() {
         return dx;
     }
 
+    /**
+     * Vrací hodnotu dy (směr pohybu v ose y).
+     *
+     * @return Hodnota dy.
+     */
     public int getDy() {
         return dy;
     }
@@ -111,6 +153,12 @@ public class Pacman implements Postava {
         g.fillArc(x * velikostPolicka, y * velikostPolicka, velikost, velikost, startAngle, arcAngle);
     }
 
+    /**
+     * Kontroluje, zda došlo ke kolizi s jinou postavou.
+     *
+     * @param postava Postava, se kterou má být provedena kontrola kolize.
+     * @return True, pokud došlo ke kolizi, jinak false.
+     */
     @Override
     public boolean Kolize(Postava postava) {
         return x < postava.getX() + postava.getVelikost() &&
@@ -119,16 +167,31 @@ public class Pacman implements Postava {
                 y + velikost > postava.getY();
     }
 
+    /**
+     * Vrací aktuální x-ovou pozici Pacmana.
+     *
+     * @return Aktuální x-ová pozice Pacmana.
+     */
     @Override
     public int getX() {
         return x;
     }
 
+    /**
+     * Vrací aktuální y-ovou pozici Pacmana.
+     *
+     * @return Aktuální y-ová pozice Pacmana.
+     */
     @Override
     public int getY() {
         return y;
     }
 
+    /**
+     * Vrací velikost Pacmana.
+     *
+     * @return Velikost Pacmana.
+     */
     @Override
     public int getVelikost() {
         return velikost;

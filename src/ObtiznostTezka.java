@@ -9,6 +9,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Třída reprezentující obtížnost "Těžká" ve hře Pacman.
+ * Tato obtížnost obsahuje dynamické stěny, které se po určité době mění.
+ */
 public class ObtiznostTezka extends JPanel implements KeyListener {
     private char[][] pole;
     private int sirka;
@@ -21,6 +25,13 @@ public class ObtiznostTezka extends JPanel implements KeyListener {
     private List<Point> dynamickaStenaPozice;
     private int aktualniSkore;
 
+    /**
+     * Konstruktor pro třídu ObtiznostTezka.
+     *
+     * @param sirka Šířka hracího pole.
+     * @param vyska Výška hracího pole.
+     * @param velikostPolicka Velikost jednoho herního políčka.
+     */
     public ObtiznostTezka(int sirka, int vyska, int velikostPolicka) {
         this.sirka = sirka;
         this.vyska = vyska;
@@ -125,7 +136,12 @@ public class ObtiznostTezka extends JPanel implements KeyListener {
         });
         duchTimer.start();
     }
-
+    /**
+     * Inicializuje herní pole ze souboru.
+     *
+     * @param nazev Název souboru, ze kterého se má pole načíst.
+     * @throws IOException Pokud nastane chyba při čtení ze souboru.
+     */
     public void inicializujPoleZeSouboru(String nazev) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader("Mapa.txt"));
         String radek;
@@ -139,6 +155,9 @@ public class ObtiznostTezka extends JPanel implements KeyListener {
         reader.close();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -175,25 +194,42 @@ public class ObtiznostTezka extends JPanel implements KeyListener {
         g.drawString("Skóre: " + aktualniSkore, 10, getHeight() - 10);
     }
 
+    /**
+     * Aktualizuje herní pole.
+     *
+     * @param novePole Nové herní pole.
+     */
     public void aktualizujPole(char[][] novePole) {
         this.pole = novePole;
         repaint();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(sirka * velikostPolicka, vyska * velikostPolicka);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void keyPressed(KeyEvent e) {
         pacman.keyPressed(e);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void keyReleased(KeyEvent e) {
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void keyTyped(KeyEvent e) {
     }
